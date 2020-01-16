@@ -20,8 +20,18 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        @yield('content')
+    <div class="flex flex-col justify-between h-full" id="app">
+        <div>
+            @include('partials.header')
+            @include('partials.subheader')
+            @include('partials.recent-search')
+        </div>
+        <div class="h-full bg-blue-7">
+            @yield('content')
+        </div>
+        <div>
+            @include('partials.footer')
+        </div>
     </div>
 </body>
 </html>
