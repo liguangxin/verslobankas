@@ -1,0 +1,17 @@
+.cat-input {
+    &:checked + .cat-button {
+        @apply bg-blue-3 text-white;
+        border-radius: 8px;
+        padding: 9px 16px;
+
+        svg path {
+            fill: #fff;
+        }
+    }
+}
+
+.cat-button {
+    min-width: 135px;
+    padding: 9px 16px;
+    width: 100%;
+}

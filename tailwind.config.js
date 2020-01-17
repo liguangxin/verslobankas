@@ -2,6 +2,9 @@ module.exports = {
   theme: {
     extend: {
         spacing: {
+            '3px': '3px',
+            '6px': '6px',
+            '10px': '10px',
             '12px': '12px',
             '14px': '14px',
             '15px': '15px',
@@ -12,6 +15,7 @@ module.exports = {
             '24px': '24px',
             '25px': '25px',
             '40px': '40px',
+            '47px': '47px',
             '48px': '48px',
             '50px': '50px',
             '100px': '100px',
@@ -23,6 +27,9 @@ module.exports = {
             2: '2',
             3: '3',
         },
+        fontFamily: {
+            'rubik': ['Rubik','sans-serif'],
+        },
     },
       'maxWidth': {
         '279px': '279px',
@@ -30,6 +37,9 @@ module.exports = {
       },
       'colors': {
         'white': '#ffffff',
+        'black': {
+            1: '#161b3d',
+        },
         'blue': {
             1: '#9fa9c5',
             2: '#eef2f9',
@@ -49,7 +59,9 @@ module.exports = {
       },
       'fontSize': {
         '12px': '12px',
+        '13px': '13px',
         '14px': '14px',
+        '18px': '18px',
       },
   },
   variants: {},
