@@ -37,13 +37,14 @@ const app = new Vue({
 document.addEventListener('click', (el) => {
     console.log(el.target);
     if (el.target.className.includes('overlay_trigger')) {
+        document.getElementsByTagName('body')[0].classList.toggle('no-scroll');
         document.getElementById('overlay').classList.toggle('active');
         document.getElementById(el.target.getAttribute('data-modal')).classList.toggle('active');
     }
 
     if (el.target.className.includes('overlay') && el.target.className.includes('active')) {
+        document.getElementsByTagName('body')[0].classList.remove('no-scroll');
         document.getElementById('overlay').classList.remove('active');
-
         document.querySelectorAll('.modal-content.active').forEach((el) => {
             el.classList.remove('active');
         });
@@ -59,6 +60,7 @@ document.onkeydown = function(evt) {
         isEscape = (evt.keyCode === 27);
     }
     if (isEscape) {
+        document.getElementsByTagName('body')[0].classList.remove('no-scroll');
         document.getElementById('overlay').classList.remove('active');
         document.querySelectorAll('.modal-content.active').forEach((el) => {
             el.classList.remove('active');
