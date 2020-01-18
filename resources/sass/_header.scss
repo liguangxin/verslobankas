@@ -1,0 +1,6 @@
+.profile-menu {
+    @apply absolute top-0 right-0 bg-white p-24px w-250px text-black-1;
+    z-index: 200;
+    box-shadow: 0 2px 20px rgba(236, 237, 244, 0.04);
+    margin-top: 60px;
+}

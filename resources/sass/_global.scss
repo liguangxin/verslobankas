@@ -11,3 +11,34 @@ body {
         @apply px-0;
     }
 }
+
+.overlay {
+    background-color: #f7f8ff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+        opacity: 0.93;
+        pointer-events: all;
+    }
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.modal-content {
+    pointer-events: none;
+    opacity: 0;
+
+    &.active {
+        pointer-events: all;
+        opacity: 1;
+    }
+}

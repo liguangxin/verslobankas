@@ -20,6 +20,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    <div id="overlay" class="overlay"></div>
     <div class="flex flex-col justify-between lg:h-full" id="app">
         <div>
             @include('partials.header')

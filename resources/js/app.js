@@ -33,3 +33,35 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
 const app = new Vue({
     el: '#app',
 });
+
+document.addEventListener('click', (el) => {
+    console.log(el.target);
+    if (el.target.className.includes('overlay_trigger')) {
+        document.getElementById('overlay').classList.toggle('active');
+        document.getElementById(el.target.getAttribute('data-modal')).classList.toggle('active');
+    }
+
+    if (el.target.className.includes('overlay') && el.target.className.includes('active')) {
+        document.getElementById('overlay').classList.remove('active');
+
+        document.querySelectorAll('.modal-content.active').forEach((el) => {
+            el.classList.remove('active');
+        });
+    }
+});
+
+document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    let isEscape;
+    if ("key" in evt) {
+        isEscape = (evt.key === "Escape" || evt.key === "Esc");
+    } else {
+        isEscape = (evt.keyCode === 27);
+    }
+    if (isEscape) {
+        document.getElementById('overlay').classList.remove('active');
+        document.querySelectorAll('.modal-content.active').forEach((el) => {
+            el.classList.remove('active');
+        });
+    }
+};
