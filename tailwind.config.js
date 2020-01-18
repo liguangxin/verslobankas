@@ -31,6 +31,13 @@ module.exports = {
             'rubik': ['Rubik','sans-serif'],
         },
     },
+      customForms: theme => ({
+          default: {
+              'checkbox': {
+                  color: theme('colors.blue.3'),
+              },
+          },
+      }),
       'maxWidth': {
         '279px': '279px',
         '340px': '340px',

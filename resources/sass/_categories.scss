@@ -1,17 +1,38 @@
 .cat-input {
     &:checked + .cat-button {
-        @apply bg-blue-3 text-white;
-        border-radius: 8px;
-        padding: 9px 16px;
+        @screen md {
+            @apply bg-blue-3 text-white;
+            border-radius: 8px;
+            padding: 9px 16px;
 
-        svg path {
-            fill: #fff;
+            svg path {
+                fill: #fff;
+            }
         }
     }
 }
 
 .cat-button {
     min-width: 135px;
-    padding: 9px 16px;
+    padding: 9px 24px;
     width: 100%;
+
+    @screen lg {
+        padding: 9px 16px;
+    }
+}
+
+.v--modal-box {
+    @apply bg-blue-7;
+    padding: 60px 24px;
+    border-radius: 0;
+}
+
+.v--modal-overlay.scrollable .v--modal-box {
+    margin-bottom: 0;
+}
+
+.v--modal-top-right {
+    z-index: 10;
+    padding: 1.5rem;
 }

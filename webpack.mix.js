@@ -1,6 +1,16 @@
 const mix = require('laravel-mix');
 require('mix-tailwindcss');
 
+mix.override(config => {
+    config.module.rules.push({
+        test: /\.vue$/,
+        use: [{
+            loader: "vue-svg-inline-loader",
+            options: { /* ... */ }
+        }]
+    })
+});
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management

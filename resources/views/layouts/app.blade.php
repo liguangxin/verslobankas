@@ -20,7 +20,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="flex flex-col justify-between h-full" id="app">
+    <div class="flex flex-col justify-between lg:h-full" id="app">
         <div>
             @include('partials.header')
             @include('partials.subheader')
