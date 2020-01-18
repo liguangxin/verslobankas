@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="pt-24px pb-20px md:pb-8 mb-20px md:mb-20px border-b border-blue-9">
         <div class="hidden md:block text-18px mb-8">Pagal kategoriją</div>
         <div @click="show" class="md:hidden flex items-center justify-between">
             <div class="text-14px">Rinktis kategoriją</div>
@@ -333,6 +333,9 @@
                     </label>
                 </li>
             </ul>
+            <div class="mt-8">
+                <button class="border border-blue-3 px-27px py-15px rounded-b-custom-1 uppercase text-blue-3 text-12px font-semibold block mx-auto">IŠSAUGOTI PASIRINKIMĄ</button>
+            </div>
         </modal>
     </div>
 </template>

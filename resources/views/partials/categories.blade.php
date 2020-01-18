@@ -1,3 +1,3 @@
-<div class="container py-24px">
+<div class="container">
     <categories></categories>
 </div>

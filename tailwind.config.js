@@ -14,6 +14,7 @@ module.exports = {
             '21px': '21px',
             '24px': '24px',
             '25px': '25px',
+            '27px': '27px',
             '40px': '40px',
             '47px': '47px',
             '48px': '48px',
@@ -56,6 +57,7 @@ module.exports = {
             6: '#eef0f9',
             7: '#f7f8ff',
             8: '#e1e6f3',
+            9: '#e1e4ef',
         },
         'green': {
             1: '#5aac44',
