@@ -65,12 +65,16 @@ module.exports = {
         'yellow': {
             1: '#ff9131',
         },
+        'purple': {
+            1: '#afacc9',
+        },
       },
       'fontSize': {
         '12px': '12px',
         '13px': '13px',
         '14px': '14px',
         '18px': '18px',
+        '24px': '24px',
       },
   },
   variants: {},
