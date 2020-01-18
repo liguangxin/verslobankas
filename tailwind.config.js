@@ -16,6 +16,7 @@ module.exports = {
             '24px': '24px',
             '25px': '25px',
             '27px': '27px',
+            '30px': '30px',
             '40px': '40px',
             '47px': '47px',
             '48px': '48px',
@@ -51,6 +52,9 @@ module.exports = {
         '279px': '279px',
         '340px': '340px',
       },
+      'minWidth': {
+        '28px': '28px',
+      },
       'colors': {
         'white': '#ffffff',
         'black': {
@@ -79,6 +83,7 @@ module.exports = {
         },
       },
       'fontSize': {
+        '10px': '10px',
         '12px': '12px',
         '13px': '13px',
         '14px': '14px',
