@@ -26,7 +26,7 @@
             @include('partials.subheader')
             @include('partials.recent-search')
         </div>
-        <div class="h-full bg-blue-7">
+        <div class="bg-blue-7">
             @yield('content')
         </div>
         <div>

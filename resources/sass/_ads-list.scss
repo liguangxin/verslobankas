@@ -1,0 +1,16 @@
+.vbad {
+    @apply bg-white border border-blue-5;
+
+    &-promoted {
+        border: 1px solid rgba(255, 145, 49, 0.34);
+        background-color: #fffcfa;
+
+        .vbad-title {
+            @apply text-yellow-1;
+        }
+
+        .vbad-comments-icon {
+            fill: #ff9131;
+        }
+    }
+}

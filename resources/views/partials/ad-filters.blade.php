@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="flex flex-col lg:flex-row lg:items-center justify-between">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between lg:mb-4">
         <div class="flex justify-between lg:text-18px font-light">
             Rodomi verslo skelbimai <span class="text-blue-3 font-normal ml-1">(12)</span>
         </div>

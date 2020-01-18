@@ -2,6 +2,7 @@ module.exports = {
   theme: {
     extend: {
         spacing: {
+            '2px': '2px',
             '3px': '3px',
             '6px': '6px',
             '10px': '10px',
@@ -19,10 +20,17 @@ module.exports = {
             '47px': '47px',
             '48px': '48px',
             '50px': '50px',
+            '92px': '92px',
+            '98px': '98px',
             '100px': '100px',
+            '157px': '157px',
+            '168px': '168px',
         },
         borderRadius: {
             'custom-1': '4px',
+        },
+        letterSpacing: {
+            'custom-1': '0.23px'
         },
         flex: {
             2: '2',
@@ -58,6 +66,7 @@ module.exports = {
             7: '#f7f8ff',
             8: '#e1e6f3',
             9: '#e1e4ef',
+            10: '#eef0f9',
         },
         'green': {
             1: '#5aac44',
@@ -73,6 +82,7 @@ module.exports = {
         '12px': '12px',
         '13px': '13px',
         '14px': '14px',
+        '16px': '16px',
         '18px': '18px',
         '24px': '24px',
       },
