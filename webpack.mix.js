@@ -22,10 +22,10 @@ mix.override(config => {
  |
  */
 
-mix.js('resources/js/app.js', 'public/js');
+mix.js('resources/js/app.js', 'public/js').sourceMaps();
 
 mix.sass('resources/sass/app.scss', 'public/css')
-    .tailwind('./tailwind.config.js');
+    .tailwind('./tailwind.config.js').sourceMaps();
 
 mix.options({
     hmrOptions: {

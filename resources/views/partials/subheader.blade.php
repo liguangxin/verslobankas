@@ -12,8 +12,8 @@
             </div>
             <div class="flex flex-1 lg:flex-3 order-last lg:order-none lg:px-4 mt-2 lg:mt-0">
                 <div class="flex-1">
-                    <select name="city" class="form-select block w-full text-12px py-14px border-blue-4 border-r-0 rounded-r-none">
-                        <option>Vilnius</option>
+                    <select name="city" data-modal="cities_list" class="overlay_trigger form-select block w-full text-12px py-14px border-blue-4 border-r-0 rounded-r-none cursor-pointer" onmousedown="(function(e){ e.preventDefault(); })(event, this)">
+                        <option>Visi miestai</option>
                     </select>
                 </div>
                 <div class="flex flex-3">

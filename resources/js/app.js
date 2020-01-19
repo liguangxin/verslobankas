@@ -39,7 +39,19 @@ document.addEventListener('click', (el) => {
     if (el.target.className.includes('overlay_trigger')) {
         document.getElementsByTagName('body')[0].classList.toggle('no-scroll');
         document.getElementById('overlay').classList.toggle('active');
-        document.getElementById(el.target.getAttribute('data-modal')).classList.toggle('active');
+
+        if (el.target.getAttribute('data-modal')) {
+            document.getElementById(el.target.getAttribute('data-modal')).classList.toggle('active');
+        }
+    }
+
+    if (el.target.className.includes('overlay_trigger_close')) {
+        document.getElementsByTagName('body')[0].classList.remove('no-scroll');
+        document.getElementById('overlay').classList.remove('active');
+
+        if (el.target.getAttribute('data-modal')) {
+            document.getElementById(el.target.getAttribute('data-modal')).classList.remove('active');
+        }
     }
 
     if (el.target.className.includes('overlay') && el.target.className.includes('active')) {

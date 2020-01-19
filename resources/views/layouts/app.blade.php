@@ -34,5 +34,6 @@
             @include('partials.footer')
         </div>
     </div>
+    @include('partials.cities-list-modal')
 </body>
 </html>
