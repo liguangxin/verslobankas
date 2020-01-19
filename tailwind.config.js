@@ -18,6 +18,7 @@ module.exports = {
             '27px': '27px',
             '30px': '30px',
             '40px': '40px',
+            '45px': '45px',
             '47px': '47px',
             '48px': '48px',
             '50px': '50px',
@@ -51,8 +52,10 @@ module.exports = {
           },
       }),
       'maxWidth': {
+        '90px': '90px',
         '279px': '279px',
         '340px': '340px',
+        '687px': '687px',
       },
       'minWidth': {
         '28px': '28px',

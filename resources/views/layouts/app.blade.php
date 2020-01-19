@@ -24,10 +24,12 @@
     <div class="flex flex-col justify-between lg:h-full" id="app">
         <div>
             @include('partials.header')
-            @include('partials.subheader')
-            @include('partials.recent-search')
+            @if(Route::currentRouteName() == 'home')
+                @include('partials.subheader')
+                @include('partials.recent-search')
+            @endif
         </div>
-        <div class="bg-blue-7">
+        <div class="flex-1 bg-blue-7">
             @yield('content')
         </div>
         <div>

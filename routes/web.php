@@ -13,7 +13,11 @@
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
+Route::get('/mano-paieskos', function () {
+    return view('my-search');
+})->name('my-search');
 
 Auth::routes();
 

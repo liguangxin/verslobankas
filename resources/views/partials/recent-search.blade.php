@@ -116,7 +116,7 @@
                 </div>
             </div>
             <div class="flex-1 text-blue-3 text-12px font-light underline flex items-center justify-center my-4 lg:my-0">
-                <a href="javascript:">Visos paieškos (6)</a>
+                <a href="{{ route('my-search') }}">Visos paieškos (6)</a>
             </div>
         </div>
     </div>
