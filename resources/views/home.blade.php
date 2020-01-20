@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title') Pagrindinis @stop
+
 @section('content')
     @include('partials.categories')
     @include('partials.ad-filters')

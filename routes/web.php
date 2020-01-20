@@ -18,6 +18,9 @@ Route::get('/', function () {
 // TODO: autentifikacija
 Route::get('/mano-paieskos', 'MySearchesController@index')->name('my-search.index');
 Route::get('/mano-paieskos/{id}', 'MySearchesController@edit')->name('my-search.edit');
+Route::get('/pardavejo-skelbimai', function(){
+    return view('pardavejo-skelbimai');
+});
 
 Auth::routes();
 

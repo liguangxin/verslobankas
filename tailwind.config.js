@@ -37,6 +37,7 @@ module.exports = {
                 'custom-1': '4px',
                 '5px': '5px',
                 '8px': '8px',
+                '10px': '10px',
             },
             letterSpacing: {
                 '0.3px': '0.3px',

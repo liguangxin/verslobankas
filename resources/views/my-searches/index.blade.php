@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title') Mano paieškos @stop
+
 @section('content')
     <div class="container max-w-687px py-45px">
         <div class="flex justify-between lg:justify-start lg:text-18px font-light mb-8">
