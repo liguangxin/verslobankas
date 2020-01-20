@@ -3,6 +3,11 @@ body {
     @apply h-full text-black-1 font-rubik;
 }
 
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 .container {
     @apply w-full mx-auto px-4;
     max-width: 1035px;
@@ -10,6 +15,10 @@ body {
     @screen xl {
         @apply px-0;
     }
+}
+
+button {
+    letter-spacing: 0.5px;
 }
 
 .overlay {

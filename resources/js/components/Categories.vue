@@ -7,7 +7,7 @@
                 <svg width="8" height="8" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8"><g><g><path d="M4,0c-0.2948,0 -0.53333,0.23854 -0.53333,0.53333v2.93334v0h-2.93334c-0.2948,0 -0.53333,0.23854 -0.53333,0.53333c0,0.29479 0.23854,0.53333 0.53333,0.53333h2.93334v0v2.93334c0,0.2948 0.23854,0.53333 0.53333,0.53333c0.29479,0 0.53333,-0.23854 0.53333,-0.53333v-2.93334v0h2.93334c0.2948,0 0.53333,-0.23854 0.53333,-0.53333c0,-0.29479 -0.23854,-0.53333 -0.53333,-0.53333h-2.93334v0v-2.93334c0,-0.2948 -0.23854,-0.53333 -0.53333,-0.53333z" fill="#0063aa" fill-opacity="1"></path></g></g></svg>
             </div>
         </div>
-        <ul class="hidden md:flex flex-wrap text-13px text-blue-3 font-light -mx-2 -my-3px">
+        <ul class="hidden md:flex items-center flex-wrap text-13px text-blue-3 font-light -mx-2 -my-3px">
             <li class="w-full md:w-1/2 lg:w-1/4 px-2 my-3px">
                 <label class="cat-label cursor-pointer">
                     <input type="checkbox" name="category[]" class="cat-input hidden">

@@ -20,7 +20,7 @@
                     </a>
                 </div>
                 <div class="flex text-12px ml-8 mr-25px">
-                    <a href="{{ route('my-search') }}" class="mr-4">Paieškos (3)</a>
+                    <a href="{{ route('my-search.index') }}" class="mr-4">Paieškos (3)</a>
                     <a href="javascript:">Mano skelbimai (2)</a>
                 </div>
                 <div class="relative">
@@ -55,7 +55,7 @@
                                 </a>
                             </li>
                             <li class="mb-3">
-                                <a href="{{ route('my-search')}}" class="flex items-center text-12px font-light">
+                                <a href="{{ route('my-search.index')}}" class="flex items-center text-12px font-light">
                                     <img src="{{ asset('images/profile-search.svg') }}" class="mr-3" alt="">
                                     Išsaugotos paieškos
                                 </a>

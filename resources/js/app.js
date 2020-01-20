@@ -34,26 +34,29 @@ const app = new Vue({
     el: '#app',
 });
 
-document.addEventListener('click', (el) => {
-    console.log(el.target);
-    if (el.target.className.includes('overlay_trigger')) {
+document.querySelectorAll('.overlay_trigger').forEach((el) => {
+    el.addEventListener('click', (event) => {
         document.getElementsByTagName('body')[0].classList.toggle('no-scroll');
         document.getElementById('overlay').classList.toggle('active');
 
-        if (el.target.getAttribute('data-modal')) {
-            document.getElementById(el.target.getAttribute('data-modal')).classList.toggle('active');
+        if (event.currentTarget.getAttribute('data-modal')) {
+            document.getElementById(event.currentTarget.getAttribute('data-modal')).classList.toggle('active');
         }
-    }
+    })
+});
 
-    if (el.target.className.includes('overlay_trigger_close')) {
+document.querySelectorAll('.overlay_trigger_close').forEach((el) => {
+    el.addEventListener('click', (event) => {
         document.getElementsByTagName('body')[0].classList.remove('no-scroll');
         document.getElementById('overlay').classList.remove('active');
 
-        if (el.target.getAttribute('data-modal')) {
-            document.getElementById(el.target.getAttribute('data-modal')).classList.remove('active');
+        if (event.currentTarget.getAttribute('data-modal')) {
+            document.getElementById(event.currentTarget.getAttribute('data-modal')).classList.remove('active');
         }
-    }
+    });
+});
 
+document.addEventListener('click', (el) => {
     if (el.target.className.includes('overlay') && el.target.className.includes('active')) {
         document.getElementsByTagName('body')[0].classList.remove('no-scroll');
         document.getElementById('overlay').classList.remove('active');

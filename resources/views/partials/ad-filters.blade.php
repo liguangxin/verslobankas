@@ -15,7 +15,7 @@
                 </label>
             </div>
             <div class="lg:pl-6 py-20px lg:py-10px">
-                <select class="form-select block w-full text-12px pl-4 py-14px mr-8">
+                <select class="form-select block w-full text-12px pl-4 py-14px mr-4">
                     <option>Naujausi viršuje</option>
                     <option>Seniausi viršuje</option>
                 </select>
