@@ -18,6 +18,7 @@ module.exports = {
                 '24px': '24px',
                 '25px': '25px',
                 '27px': '27px',
+                '28px': '28px',
                 '30px': '30px',
                 '36px': '36px',
                 '40px': '40px',
@@ -26,6 +27,8 @@ module.exports = {
                 '48px': '48px',
                 '50px': '50px',
                 '56px': '56px',
+                '72px': '72px',
+                '86px': '86px',
                 '92px': '92px',
                 '98px': '98px',
                 '100px': '100px',
@@ -34,10 +37,11 @@ module.exports = {
                 '250px': '250px',
             },
             borderRadius: {
-                'custom-1': '4px',
+                '4px': '4px',
                 '5px': '5px',
                 '8px': '8px',
                 '10px': '10px',
+                '20px': '20px',
             },
             letterSpacing: {
                 '0.3px': '0.3px',
@@ -51,6 +55,9 @@ module.exports = {
             fontFamily: {
                 'rubik': ['Rubik','sans-serif'],
             },
+            boxShadow: {
+                'custom-1': '0 0 16px rgba(232, 235, 243, 0.11)',
+            },
         },
         customForms: theme => ({
             default: {
@@ -61,6 +68,7 @@ module.exports = {
         }),
         'maxWidth': {
             '90px': '90px',
+            '251px': '251px',
             '279px': '279px',
             '340px': '340px',
             '687px': '687px',
@@ -85,6 +93,7 @@ module.exports = {
                 8: '#e1e6f3',
                 9: '#e1e4ef',
                 10: '#eef0f9',
+                11: '#efeef9',
             },
             'green': {
                 1: '#5aac44',

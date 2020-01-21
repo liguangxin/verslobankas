@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="lg:hidden flex">
-                <a href="javascript:" class="flex flex-col items-center justify-center bg-blue-3 rounded-custom-1 w-40px h-40px">
+                <a href="javascript:" class="flex flex-col items-center justify-center bg-blue-3 rounded-4px w-40px h-40px">
                     <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 12 12"><g><g><path d="M6,0c-0.30113,0 -0.54545,0.24433 -0.54545,0.54545v4.9091v0h-4.9091c-0.30112,0 -0.54545,0.24432 -0.54545,0.54545c0,0.30113 0.24433,0.54545 0.54545,0.54545h4.9091v0v4.9091c0,0.30112 0.24432,0.54545 0.54545,0.54545c0.30113,0 0.54545,-0.24433 0.54545,-0.54545v-4.9091v0h4.9091c0.30112,0 0.54545,-0.24432 0.54545,-0.54545c0,-0.30113 -0.24433,-0.54545 -0.54545,-0.54545h-4.9091v0v-4.9091c0,-0.30112 -0.24432,-0.54545 -0.54545,-0.54545z" fill="#ffffff" fill-opacity="1"></path></g></g></svg>
                     <span class="text-12px text-white">Įdėk</span>
                 </a>

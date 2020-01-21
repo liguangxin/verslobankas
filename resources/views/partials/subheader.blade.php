@@ -1,7 +1,7 @@
 <div class="subheading py-24px bg-blue-2">
     <div class="container">
         <div class="flex flex-wrap lg:flex-no-wrap justify-between">
-            <button class="hidden lg:flex items-center justify-between text-12px uppercase text-white bg-blue-3 font-medium px-18px py-15px rounded-custom-1 border-0 tracking-0.5px">
+            <button class="hidden lg:flex items-center justify-between text-12px uppercase text-white bg-blue-3 font-medium px-18px py-15px rounded-4px border-0 tracking-0.5px">
                 <span class="mr-6">ĮDĖTI SKELBIMĄ</span>
                 <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 14"><g><g><path d="M7,0c-0.30954,0 -0.56,0.25047 -0.56,0.56v5.88v0h-5.88c-0.30954,0 -0.56,0.25047 -0.56,0.56c0,0.30953 0.25047,0.56 0.56,0.56h5.88v0v5.88c0,0.30954 0.25047,0.56 0.56,0.56c0.30953,0 0.56,-0.25047 0.56,-0.56v-5.88v0h5.88c0.30954,0 0.56,-0.25047 0.56,-0.56c0,-0.30953 -0.25047,-0.56 -0.56,-0.56h-5.88v0v-5.88c0,-0.30954 -0.25047,-0.56 -0.56,-0.56z" fill="#ffffff" fill-opacity="1"></path></g></g></svg>
             </button>
