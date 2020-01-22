@@ -76,7 +76,7 @@ module.exports = {
                     borderColor: '#baacc9',
                     borderRadius: '5px',
                     '&:checked': {
-                        backgroundSize: '50%',
+                        backgroundSize: '46%',
                     },
                 },
             },

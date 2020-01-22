@@ -55,8 +55,10 @@
                     </button>
                 </div>
             </div>
-            <div id="my_search_{{ $iteration }}" class="mysearch-edit modal-content absolute">
-                ok
+            <div id="my_search_{{ $iteration }}" class="mysearch-edit modal-content">
+                <div class="relative p-8 pt-72px lg:pt-8 overflow-scroll lg:overflow-auto h-full lg:h-auto">
+                    <div class="text-18px text-center font-light tracking-0.34px mb-40px">Redaguoti mano paiešką</div>
+                </div>
             </div>
         @endrepeat
     </div>
