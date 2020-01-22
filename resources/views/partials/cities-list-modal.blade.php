@@ -271,7 +271,7 @@
                 </li>
             </ul>
             <div class="mt-8">
-                <button class="border border-blue-3 px-27px py-15px rounded-b-custom-1 uppercase text-blue-3 text-12px font-medium block">
+                <button class="border border-blue-3 px-27px py-15px rounded-b-custom-1 uppercase text-blue-3 text-12px font-medium block mx-auto">
                     IŠSAUGOTI PASIRINKIMĄ
                 </button>
             </div>
