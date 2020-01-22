@@ -66,6 +66,13 @@ module.exports = {
             default: {
                 'checkbox': {
                     color: theme('colors.blue.3'),
+                    icon: '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 10 7"><g><g><path d="M8.63691,0.25705v0l-5.08453,5.08524v0l-2.24985,-2.25056c-0.28375,-0.28375 -0.72667,-0.28375 -1.00972,0c-0.28375,0.28375 -0.28375,0.72667 0,1.00971l2.7461,2.7461c0.14187,0.14187 0.31905,0.21246 0.49621,0.21246c0.17717,0 0.37234,-0.07059 0.49621,-0.21246l5.56271,-5.56271c0.28375,-0.28375 0.28375,-0.72667 0,-1.00971c-0.23046,-0.28375 -0.69136,-0.28375 -0.95711,-0.018z" fill="#ffffff" fill-opacity="1"></path></g></g></svg>',
+                    backgroundColor: 'transparent',
+                    borderColor: '#baacc9',
+                    borderRadius: '5px',
+                    '&:checked': {
+                        backgroundSize: '50%',
+                    },
                 },
             },
         }),
