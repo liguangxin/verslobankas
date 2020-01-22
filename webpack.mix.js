@@ -33,3 +33,7 @@ mix.options({
         port: 8080
     }
 });
+
+if (mix.inProduction()) {
+    mix.version();
+}
