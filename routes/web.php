@@ -21,6 +21,9 @@ Route::get('/mano-paieskos/{id}', 'MySearchesController@edit')->name('my-search.
 Route::get('/pardavejo-skelbimai', function(){
     return view('pardavejo-skelbimai');
 });
+Route::get('/mano-skelbimai', function(){
+    return view('mano-skelbimai');
+});
 
 Auth::routes();
 

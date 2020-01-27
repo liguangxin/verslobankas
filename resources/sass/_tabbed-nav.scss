@@ -1,0 +1,9 @@
+.tabbed-nav {
+    .active {
+        @apply border-b-2 border-blue-3;
+
+        a {
+            @apply text-blue-3;
+        }
+    }
+}

@@ -21,7 +21,7 @@
                 </div>
                 <div class="flex text-12px ml-8 mr-25px">
                     <a href="{{ route('my-search.index') }}" class="mr-4">Paieškos (3)</a>
-                    <a href="javascript:">Mano skelbimai (2)</a>
+                    <a href="/mano-skelbimai">Mano skelbimai (2)</a>
                 </div>
                 <div class="relative">
                     <a href="javascript:" class="block">
@@ -37,7 +37,7 @@
                         </div>
                         <ul>
                             <li class="mb-3">
-                                <a href="javascript:" class="flex items-center text-12px font-light">
+                                <a href="/mano-skelbimai" class="flex items-center text-12px font-light">
                                     <img src="{{ asset('images/profile-user.svg') }}" class="mr-3" alt="">
                                     Mano skelbimai
                                 </a>
