@@ -51,3 +51,36 @@ button {
         opacity: 1;
     }
 }
+
+.fake-select {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 9px;
+        height: 5px;
+        background-image: url("../images/seelct_arrow.svg");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1px;
+        height: 27px;
+        background-color: #e0e3ec;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

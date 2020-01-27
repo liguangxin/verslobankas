@@ -56,8 +56,184 @@
                 </div>
             </div>
             <div id="my_search_{{ $iteration }}" class="mysearch-edit modal-content">
-                <div class="relative p-8 pt-72px lg:pt-8 overflow-scroll lg:overflow-auto h-full lg:h-auto">
+                <div class="relative p-24px lg:p-8 pt-72px lg:pt-8 lg:px-87px overflow-scroll lg:overflow-auto h-full lg:h-auto">
                     <div class="text-18px text-center font-light tracking-0.34px mb-40px">Redaguoti mano paiešką</div>
+                    <div class="flex flex-wrap border-b border-blue-5 pb-25px mb-25px">
+                        <div class="w-full lg:w-163px mb-4 lg:mb-0">
+                            <select name="ad_type" class="form-select block w-full text-12px py-14px border-blue-4">
+                                <option>Skelbimo tipas</option>
+                            </select>
+                        </div>
+                        <div class="w-full bg-white lg:flex-1 lg:pl-12px">
+                            <div class="flex items-center py-14px text-12px border border-blue-4 h-full rounded-4px">
+                                <div class="fake-select w-122px pl-4 cursor-pointer">Vilnius</div>
+                                <div class="flex-1 pr-4">
+                                    <input type="text" class="pl-4 outline-none" placeholder="Antraštės tekstas">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap lg:-mx-6px mb-4">
+                        <div class="w-full lg:w-1/2 lg:px-6px mb-4 lg:mb-0">
+                            <div class="flex -mx-6px">
+                                <div class="flex-1 px-6px">
+                                    <label class="block">
+                                        <span class="text-14px block leading-none mb-14px">Kaina</span>
+                                        <select class="form-select block pl-4 w-full text-12px py-14px font-light">
+                                            <option value="">Nuo</option>
+                                            <option>$1,000</option>
+                                            <option>$5,000</option>
+                                            <option>$10,000</option>
+                                            <option>$25,000</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="flex-1 px-6px">
+                                    <label class="block">
+                                        <span class="text-14px block leading-none mb-14px">&nbsp;</span>
+                                        <select class="form-select block pl-4 w-full text-12px py-14px font-light">
+                                            <option value="">Iki</option>
+                                            <option>$1,000</option>
+                                            <option>$5,000</option>
+                                            <option>$10,000</option>
+                                            <option>$25,000</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 lg:px-6px">
+                            <div class="flex -mx-6px">
+                                <div class="flex-1 px-6px">
+                                    <label class="block">
+                                        <span class="text-14px block leading-none mb-14px">Pelnas</span>
+                                        <select class="form-select block pl-4 w-full text-12px py-14px font-light">
+                                            <option value="">Nuo</option>
+                                            <option>$1,000</option>
+                                            <option>$5,000</option>
+                                            <option>$10,000</option>
+                                            <option>$25,000</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="flex-1 px-6px">
+                                    <label class="block">
+                                        <span class="text-14px block leading-none mb-14px">&nbsp;</span>
+                                        <select class="form-select block pl-4 w-full text-12px py-14px font-light">
+                                            <option value="">Iki</option>
+                                            <option>$1,000</option>
+                                            <option>$5,000</option>
+                                            <option>$10,000</option>
+                                            <option>$25,000</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap lg:-mx-6px mb-4">
+                        <div class="w-full lg:w-1/2 lg:px-6px mb-4 lg:mb-0">
+                            <div class="flex -mx-6px">
+                                <div class="flex-1 px-6px">
+                                    <label class="block">
+                                        <span class="text-14px block leading-none mb-14px">Metinė apyvarta</span>
+                                        <select class="form-select block pl-4 w-full text-12px py-14px font-light">
+                                            <option value="">Nuo</option>
+                                            <option>$1,000</option>
+                                            <option>$5,000</option>
+                                            <option>$10,000</option>
+                                            <option>$25,000</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="flex-1 px-6px">
+                                    <label class="block">
+                                        <span class="text-14px block leading-none mb-14px">&nbsp;</span>
+                                        <select class="form-select block pl-4 w-full text-12px py-14px font-light">
+                                            <option value="">Iki</option>
+                                            <option>$1,000</option>
+                                            <option>$5,000</option>
+                                            <option>$10,000</option>
+                                            <option>$25,000</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 lg:px-6px">
+                            <div class="flex -mx-6px">
+                                <div class="flex-1 px-6px">
+                                    <label class="block">
+                                        <span class="text-14px block leading-none mb-14px">Darbuotojai</span>
+                                        <select class="form-select block pl-4 w-full text-12px py-14px font-light">
+                                            <option value="">Nuo</option>
+                                            <option>1</option>
+                                            <option>10</option>
+                                            <option>20</option>
+                                            <option>50</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="flex-1 px-6px">
+                                    <label class="block">
+                                        <span class="text-14px block leading-none mb-14px">&nbsp;</span>
+                                        <select class="form-select block pl-4 w-full text-12px py-14px font-light">
+                                            <option value="">Iki</option>
+                                            <option>$1,000</option>
+                                            <option>$5,000</option>
+                                            <option>$10,000</option>
+                                            <option>$25,000</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap lg:-mx-6px mb-4 lg:mb-45px">
+                        <div class="w-full lg:w-1/2 lg:px-6px mb-4 lg:mb-0">
+                            <span class="text-14px block leading-none mb-14px whitespace-no-wrap">Lankytoju skaičiu per diena (www)</span>
+                            <div class="flex -mx-6px">
+                                <div class="flex-1 px-6px">
+                                    <label class="block">
+                                        <select class="form-select block pl-4 w-full text-12px py-14px font-light">
+                                            <option value="">Nuo</option>
+                                            <option>$1,000</option>
+                                            <option>$5,000</option>
+                                            <option>$10,000</option>
+                                            <option>$25,000</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <div class="flex-1 px-6px">
+                                    <label class="block">
+                                        <select class="form-select block pl-4 w-full text-12px py-14px font-light">
+                                            <option value="">Iki</option>
+                                            <option>$1,000</option>
+                                            <option>$5,000</option>
+                                            <option>$10,000</option>
+                                            <option>$25,000</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 lg:px-6px flex items-end justify-end">
+                            <div class="flex items-center w-full justify-center lg:justify-end h-48px">
+                                <a href="javascript:" class="flex items-center text-14px font-light underline tracking-0.26px">
+                                    <img src="{{ asset('images/reset.svg') }}" alt="" class="mr-3">
+                                    Atstatyti filtrus
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col-reverse lg:flex-row justify-center">
+                        <button class="flex items-center justify-center text-blue-3 text-12px uppercase font-medium tracking-0.5px py-15px px-16">
+                            ATŠAUKTI
+                        </button>
+                        <button class="flex items-center justify-center mb-4 lg:mb-0 w-full min-w-222px lg:w-auto bg-blue-3 text-white text-12px uppercase font-medium tracking-0.5px bg-blue-2 rounded-4px p-4">
+                            IŠSAUGOTI
+                        </button>
+                    </div>
                 </div>
             </div>
         @endrepeat

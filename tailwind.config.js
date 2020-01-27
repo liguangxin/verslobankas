@@ -7,6 +7,7 @@ module.exports = {
                 '4px': '4px',
                 '6px': '6px',
                 '10px': '10px',
+                '11px': '11px',
                 '12px': '12px',
                 '13px': '13px',
                 '14px': '14px',
@@ -30,10 +31,13 @@ module.exports = {
                 '56px': '56px',
                 '72px': '72px',
                 '86px': '86px',
+                '87px': '87px',
                 '92px': '92px',
                 '98px': '98px',
                 '100px': '100px',
+                '122px': '122px',
                 '157px': '157px',
+                '163px': '163px',
                 '168px': '168px',
                 '192px': '192px',
                 '250px': '250px',
@@ -47,6 +51,7 @@ module.exports = {
             },
             letterSpacing: {
                 '0.23px': '0.23px',
+                '0.26px': '0.26px',
                 '0.3px': '0.3px',
                 '0.34px': '0.34px',
                 '0.5px': '0.5px',
@@ -92,6 +97,7 @@ module.exports = {
         },
         'minWidth': {
             '28px': '28px',
+            '222px': '222px',
         },
         'colors': {
             'white': '#ffffff',
