@@ -126,6 +126,7 @@ module.exports = {
             },
             'yellow': {
                 1: '#ff9131',
+                2: '#ffefe0',
             },
             'purple': {
                 1: '#afacc9',

@@ -11,6 +11,9 @@ window.Vue = require('vue');
 import VModal from 'vue-js-modal'
 Vue.use(VModal);
 
+import SlideUpDown from 'vue-slide-up-down'
+Vue.component('slide-up-down', SlideUpDown);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -57,7 +60,7 @@ document.querySelectorAll('.overlay_trigger_close').forEach((el) => {
 });
 
 document.addEventListener('click', (el) => {
-    if (el.target.className.includes('overlay') && el.target.className.includes('active')) {
+    if (el.target.getAttribute('class') && el.target.className.includes('overlay') && el.target.className.includes('active')) {
         document.getElementsByTagName('body')[0].classList.remove('no-scroll');
         document.getElementById('overlay').classList.remove('active');
         document.querySelectorAll('.modal-content.active').forEach((el) => {

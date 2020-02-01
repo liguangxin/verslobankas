@@ -1,0 +1,15 @@
+.btn-ad-action {
+    @apply border border-blue-3 px-27px py-15px rounded-4px uppercase text-blue-3 text-12px font-medium block mb-10px flex items-center justify-center relative;
+
+    @screen lg {
+        @apply mr-4 mb-0 border-0 px-0 capitalize text-blue-1 font-light py-0 justify-start;
+    }
+
+    .icon path {
+        fill: #0063aa;
+
+        @screen lg {
+            fill: #9fa9c5;
+        }
+    }
+}
