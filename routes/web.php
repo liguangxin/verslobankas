@@ -23,6 +23,9 @@ Route::get('/pardavejo-skelbimai', function(){
 Route::get('/mano-skelbimai', function(){
     return view('mano-skelbimai');
 });
+Route::get('/duk', function(){
+    return view('duk');
+});
 
 Auth::routes();
 

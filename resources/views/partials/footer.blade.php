@@ -15,7 +15,7 @@
             <div class="hidden lg:flex flex-1 text-14px">
                 <div class="flex-1 flex justify-end">
                     <ul class="leading-loose">
-                        <li><a href="javascript:">D.U.K</a></li>
+                        <li><a href="/duk">D.U.K</a></li>
                         <li><a href="javascript:">Naudojimosi taisyklės</a></li>
                         <li><a href="javascript:">Reklama</a></li>
                     </ul>
