@@ -27,6 +27,9 @@ Route::get('/duk', function(){
     return view('duk');
 });
 
+Route::get('skelbimai', 'AdsController@index');
+Route::get('skelbimai/{slug}', 'AdsController@get_ad');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

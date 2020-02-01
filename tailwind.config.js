@@ -31,6 +31,7 @@ module.exports = {
                 '48px': '48px',
                 '50px': '50px',
                 '56px': '56px',
+                '70px': '70px',
                 '72px': '72px',
                 '86px': '86px',
                 '87px': '87px',
@@ -95,6 +96,7 @@ module.exports = {
             '279px': '279px',
             '287px': '287px',
             '340px': '340px',
+            '337px': '337px',
             '435px': '435px',
             '687px': '687px',
             '1035px': '1035px',
@@ -130,6 +132,7 @@ module.exports = {
             },
             'purple': {
                 1: '#afacc9',
+                2: '#baacc9',
             },
         },
         'fontSize': {

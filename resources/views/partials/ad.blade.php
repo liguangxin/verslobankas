@@ -4,13 +4,13 @@
         <svg width="17" height="15" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 15"><g><g><path d="M4.4828,1.17227c0.84789,0 1.70032,0.33855 2.35577,1.01182l1.25636,1.28945c0.10948,0.11105 0.2567,0.17429 0.41073,0.17429c0.15478,0 0.30201,-0.06324 0.41073,-0.17429l1.24428,-1.28329c1.31071,-1.34575 3.39449,-1.34575 4.70535,0c1.31071,1.34575 1.31071,3.49133 0,4.837c-2.12382,2.18021 -4.24842,4.36574 -6.37244,6.54595l-6.36026,-6.55227c-1.30996,-1.34729 -1.31071,-3.49132 0,-4.837c0.65535,-0.67327 1.50173,-1.01182 2.34958,-1.01182zM4.48281,0.00004c-1.14914,0 -2.29604,0.4527 -3.17105,1.35116c-1.75014,1.79692 -1.74788,4.70512 0,6.50291l6.771,6.9716c0.10947,0.11105 0.2567,0.17429 0.41073,0.17429c0.15478,0 0.30201,-0.06324 0.41073,-0.17429c2.26048,-2.32058 4.5225,-4.63879 6.78317,-6.95936c1.75015,-1.79692 1.75015,-4.71203 0,-6.50903c-1.75014,-1.79691 -4.59807,-1.79691 -6.34828,0l-0.83354,0.86375l-0.84563,-0.86991c-0.87506,-0.89846 -2.02795,-1.35116 -3.17723,-1.35116z" fill="#0063aa" fill-opacity="1"></path></g></g></svg>
     </div>
     <div class="mr-24px">
-        <a href="javascript:" class="bg-cover bg-center bg-blue-2 flex items-center justify-center w-98px h-92px lg:w-168px lg:h-157px rounded-lg">
+        <a href="/skelbimai/parduotu-transporto-priemone-63745" class="bg-cover bg-center bg-blue-2 flex items-center justify-center w-98px h-92px lg:w-168px lg:h-157px rounded-lg">
             <img src="{{ asset('images/watermark.svg') }}" alt="">
         </a>
     </div>
     <div>
         <div class="flex items-center">
-            <a href="javascript:">
+            <a href="/skelbimai/parduotu-transporto-priemone-63745">
                 <h3 class="vbad-title text-14px lg:text-16px leading-tight lg:leading-normal tracking-0.3px mt-3 lg:mt-0 mr-2">
                     Parduodu transporto įmonę
                 </h3>
