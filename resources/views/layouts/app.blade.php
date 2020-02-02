@@ -11,7 +11,10 @@
         @yield('title') - Verslo bankas
     </title>
 
-    <!-- Scripts -->
+    @stack('header-css')
+    @stack('header-scripts')
+
+    <!-- Scripts defered -->
     <script src="{{ mix('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -39,5 +42,7 @@
         </div>
     </div>
     @include('partials.cities-list-modal')
+
+    @stack('footer-scripts')
 </body>
 </html>
