@@ -85,3 +85,35 @@ document.onkeydown = function(evt) {
         });
     }
 };
+
+// -------------------
+// Ad inner
+// -------------------
+
+const ad_more_photos = document.getElementById('ad_more_photos');
+
+if (ad_more_photos) {
+    ad_more_photos.addEventListener('click', (el) => {
+        const visible_images = document.querySelectorAll('[data-fancybox].bg-cover');
+        const hidden_images = document.querySelectorAll('[data-fancybox].hidden');
+        let images_arr = [];
+
+        hidden_images.forEach((image) => {
+            images_arr.push({
+                src: image.href,
+            });
+        });
+
+        visible_images.forEach((image) => {
+            images_arr.push({
+                src: image.href,
+            });
+        });
+
+        $.fancybox.open(images_arr, {
+            loop : false
+        });
+    });
+}
+
+// end Ad inner
