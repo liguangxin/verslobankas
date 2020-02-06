@@ -65,6 +65,11 @@ module.exports = {
                 '0.34px': '0.34px',
                 '0.45px': '0.45px',
                 '0.5px': '0.5px',
+                '0.58px': '0.58px',
+            },
+            lineHeight: {
+                '21px': '21px',
+                '32px': '32px',
             },
             flex: {
                 2: '2',
@@ -149,6 +154,7 @@ module.exports = {
             '16px': '16px',
             '18px': '18px',
             '24px': '24px',
+            '26px': '26px',
         },
     },
     variants: {},

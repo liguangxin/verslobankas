@@ -27,7 +27,7 @@
                 <img src="{{ asset('images/arrow-back-1.svg') }}" alt="Atgal">
             </a>
         </div>
-        <div class="flex flex-col lg:flex-row">
+        <div class="flex flex-col lg:flex-row lg:items-start">
             <div class="flex-1 lg:mr-13px">
                 <div class="relative mb-25px">
                     <button class="absolute right-0 top-0 mt-10px mr-10px lg:mr-23px w-42px h-42px bg-blue-2 rounded-7px flex items-center justify-center" type="button">
@@ -45,7 +45,7 @@
                         <a data-fancybox="gallery" href="{{ asset('images/tmp/photo-1579031421760-6455c964d968.jpeg') }}" class="hidden"></a>
                     </div>
                 </div>
-                <div class="flex flex-col lg:flex-row tracking-0.5px text-14px font-light bg-white rounded-8px p-12px mb-4 lg:mb-0">
+                <div class="flex flex-col lg:flex-row tracking-0.5px text-14px font-light bg-white rounded-8px p-12px mb-4 lg:mb-8">
                     <div class="flex items-center pb-4 lg:pb-0 mb-4 lg:mb-0 border-b lg:border-b-0 lg:pr-8 lg:mr-8 lg:border-r border-blue-4">
                         <div class="bg-yellow-1 text-white text-12px rounded flex items-center justify-center w-45px h-23px mr-24px">
                             <span class="mr-1">4</span>
@@ -69,7 +69,86 @@
                             </div>
                         </div>
                     </div>
-
+                </div>
+                <div class="flex flex-col lg:flex-row lg:justify-between border-b border-blue-4 pb-24px mb-24px">
+                    <div class="mb-4 lg:mb-0">
+                        <h1 class="text-26px font-light tracking-0.5px leading-tight">Parduodu transporto įmonę</h1>
+                        <div class="font-light text-blue-1">Vilnius</div>
+                    </div>
+                    <div class="text-26px font-medium tracking-0.5px uppercase text-blue-3">
+                        8,000 EUR
+                    </div>
+                </div>
+                <div class="text-14px tracking-0.58px leading-32px border-b border-blue-4 pb-24px mb-24px">
+                    <div class="lg:flex lg:justify-between">
+                        <span class="font-light">Miestas:</span>
+                        <span class="font-medium">Vilnius</span>
+                    </div>
+                    <div class="lg:flex lg:justify-between">
+                        <span class="font-light">Kategorija:</span>
+                        <span class="font-medium">Automobiliai</span>
+                    </div>
+                    <div class="lg:flex lg:justify-between">
+                        <span class="font-light">Praėjųsių metų apyvarta:</span>
+                        <span class="font-medium">100,000 - 300,000 EUR</span>
+                    </div>
+                    <div class="lg:flex lg:justify-between">
+                        <span class="font-light">Vidutinis lankytojų skaičius:</span>
+                        <span class="font-medium">1229</span>
+                    </div>
+                </div>
+                <div class="flex flex-col-reverse lg:items-center lg:flex-row lg:justify-between mb-21px">
+                    <div class="text-24px font-light tracking-0.45px mt-4 lg:mt-0">Aprašymas</div>
+                    <div class="flex -ml-1 lg:ml-0 -mr-1">
+                        <button type="button" class="h-42px lg:h-47px w-42px lg:w-47px rounded-8px bg-blue-2 flex items-center justify-center mx-1">
+                            <img src="{{ asset('images/adactions-messenger.svg') }}" alt="">
+                        </button>
+                        <button type="button" class="h-42px lg:h-47px w-42px lg:w-47px rounded-8px bg-blue-2 flex items-center justify-center mx-1">
+                            <img src="{{ asset('images/adactions-share.svg') }}" alt="">
+                        </button>
+                        <button type="button" class="h-42px lg:h-47px w-42px lg:w-47px rounded-8px bg-blue-2 flex items-center justify-center mx-1">
+                            <img src="{{ asset('images/adactions-print.svg') }}" alt="">
+                        </button>
+                        <button type="button" class="h-42px lg:h-47px w-42px lg:w-47px rounded-8px bg-blue-2 flex items-center justify-center mx-1">
+                            <img src="{{ asset('images/adactions-stop.svg') }}" alt="">
+                        </button>
+                        <button type="button" class="h-42px lg:h-47px w-42px lg:w-47px rounded-8px bg-blue-2 flex items-center justify-center mx-1">
+                            <img src="{{ asset('images/adactions-edit.svg') }}" alt="">
+                        </button>
+                        <button type="button" class="h-42px lg:h-47px w-42px lg:w-47px rounded-8px bg-blue-2 flex items-center justify-center mx-1">
+                            <img src="{{ asset('images/adactions-copy.svg') }}" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="mb-10">
+                    <div class="cms text-14px font-light tracking-0.26px leading-21px mb-6">
+                        <p>Parduodamas pelningai veikiantis ir kiekvieną mėnesį augantis verslas.
+                            Įmonė pradėjo veiklą nuo 2018-10 ir per pirmuosius trijus mėnesius (2018-10/11/12) gavo 4630 EUR pajamų iš kurių 2540 EUR gryno pelno. Visi pinigai buvo investuojami į reklamą (kino teatre, blogeriai, Google AdWords reklama).</p>
+                        <p>Pagrindinė MB „Skruzdis“ veiklos sritis – skruzdėlių fermų gamyba bei prekyba. Įmonė veiklą vykdo – Lietuvoje, Latvijoje ir pradėda Estijoje.</p>
+                        <p>Skruzdėlių ferma – yra ryški ir ypatinga dovana, tinkanti bet kokiai progai. Mūsų fermos puikiai tinka vaikams – jiems tai malonus ir įdomus užsiėmimas, kuris ugdo sąmoningumą ir motorinius įgūdžius. Skruzdėlės – tai nedideli namų augintiniai. Vaikai, rūpindamiesi jomis, mokosi atsakingumo ir rūpestingumo.</p>
+                    </div>
+                    <a href="javascript:" class="text-14px underline text-blue-3">Rodyti visą skelbimą</a>
+                </div>
+                <div>
+                    <div class="text-24px font-light tracking-0.45px mt-4 lg:mt-0 mb-4">Komentarai (4)</div>
+                    <div class="text-14px tracking-0.26px mb-21px">
+                        Puslapis sukurtas 2019-08-02. Nuo sukūrimo datos skundų negauta.
+                    </div>
+                    <div class="bg-white p-4 rounded-8px">
+                        <div class="flex items-center text-12px">
+                            <img src="{{ asset('images/user-icon-1.svg') }}" alt="" class="mr-4">
+                            <div class="flex flex-1">
+                                <div class="font-light mr-8">
+                                    <div>Jack Doe</div>
+                                    <div class="text-blue-1">Vilnius</div>
+                                </div>
+                                <div class="flex-1 flex justify-between">
+                                    <div>Kokia galutine kaina?</div>
+                                    <div>2019-08-04</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="w-full max-w-337px bg-white p-4 lg:p-8">
