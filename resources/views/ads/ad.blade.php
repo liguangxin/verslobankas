@@ -134,21 +134,35 @@
                     <div class="text-14px tracking-0.26px mb-21px">
                         Puslapis sukurtas 2019-08-02. Nuo sukūrimo datos skundų negauta.
                     </div>
-                    <div class="bg-white p-4 rounded-8px">
-                        <div class="flex items-center text-12px">
-                            <img src="{{ asset('images/user-icon-1.svg') }}" alt="" class="mr-4">
-                            <div class="flex flex-1">
-                                <div class="font-light mr-8">
-                                    <div>Jack Doe</div>
-                                    <div class="text-blue-1">Vilnius</div>
-                                </div>
-                                <div class="flex-1 flex justify-between">
-                                    <div>Kokia galutine kaina?</div>
-                                    <div>2019-08-04</div>
+                    <div class="border border-dashed border-blue-1 h-87px mb-4 flex items-center justify-center rounded-8px text-18px font-light text-blue-1 tracking-0.3px">
+                        Komentarų nėra
+                    </div>
+                    @repeat(3)
+                        <div class="bg-white p-4 rounded-8px relative mb-4">
+                            <div class="flex items-center text-12px">
+                                <img src="{{ asset('images/user-icon-1.svg') }}" alt="" class="mr-4">
+                                <div class="flex flex-col lg:flex-row flex-1">
+                                    <div class="font-light mb-3 lg:mb-0 lg:mr-8">
+                                        <div>Jack Doe</div>
+                                        <div class="text-blue-1">Vilnius</div>
+                                    </div>
+                                    <div class="flex-1 flex flex-col lg:flex-row justify-between">
+                                        <div class="font-light mb-3 lg:mb-0 lg:pr-12">Sveiki, mano sudomino. Ar galetumete man paskambinti? Mano nr 867420316</div>
+                                        <div class="flex-none text-blue-1 pr-6">2019-08-04</div>
+                                    </div>
+                                    <button class="absolute top-0 right-0 mt-25px mr-13px">
+                                        <img src="{{ asset('images/comment-del.svg') }}" alt="">
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endrepeat
+                </div>
+                <div class="flex flex-col lg:flex-row items-center justify-between mt-4 lg:mt-24px mb-8">
+                    <a href="javascript:" class="text-14px text-blue-3 tracking-0.58px mb-3 lg:mb-0">Visi komentarai (3)</a>
+                    <button type="button" class="w-full lg:w-auto border border-blue-3 px-40px py-15px rounded-4px uppercase text-blue-3 text-12px font-medium block">
+                        KOMENTUOTI
+                    </button>
                 </div>
             </div>
             <div class="w-full max-w-337px bg-white p-4 lg:p-8">
@@ -164,6 +178,29 @@
                     <a href="/pardavejo-skelbimai" class="underline text-blue-3">Visi pardavėjo skelbimai (3)</a>
                 </div>
             </div>
+        </div>
+        <div class="hidden lg:flex lg:items-center lg:justify-between bg-white p-4 lg:p-8 mb-28px shadow-custom-1 border border-blue-11 rounded-10px">
+            @include('partials.user-avatar')
+            <div class="lg:flex">
+                <a href="tel:+37067607905" class="flex items-center text-12px tracking-0.5px bg-blue-2 rounded-4px p-4 pr-56px lg:mr-12px">
+                    <img src="{{ asset('images/phone.svg') }}" class="pr-6" alt="">
+                    +37067607905
+                </a>
+                @include('partials.email-to-seller-btn', ['additional_classes' => 'lg:w-auto'])
+            </div>
+        </div>
+        <div>
+            <h4 class="text-22px font-light tracking-0.41px mb-21px">Panašūs verslo skelbimai</h4>
+            @repeat(3)
+                @if($iteration < 1)
+                    @include('partials.ad', ['promoted' => true])
+                @else
+                    @include('partials.ad', ['promoted' => false])
+                @endif
+            @endrepeat
+        </div>
+        <div class="mb-50px">
+            @include('partials.footer-cities')
         </div>
     </div>
 @endsection
