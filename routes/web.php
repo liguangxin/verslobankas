@@ -30,6 +30,13 @@ Route::get('/duk', function(){
 Route::get('skelbimai', 'AdsController@index');
 Route::get('skelbimai/{slug}', 'AdsController@get_ad');
 
+Route::get('perziureti-skelbimai-nera', function() {
+    return view('perziureti-skelbimai-nera');
+});
+Route::get('perziureti-skelbimai', function() {
+    return view('perziureti-skelbimai');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
