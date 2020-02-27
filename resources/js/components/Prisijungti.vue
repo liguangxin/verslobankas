@@ -23,6 +23,7 @@
         </div>
         <div class="container py-8 lg:py-56px max-w-435px">
             <login v-show="active_tab === 1"></login>
+            <register v-show="active_tab === 3"></register>
         </div>
     </div>
 </template>
@@ -30,6 +31,7 @@
 <script>
     import bus from "../bus";
     import login from '../components-partials/PrisijungtiLogin'
+    import register from '../components-partials/PrisijungtiRegister'
 
     export default {
         name: 'prisijungti',
@@ -39,7 +41,8 @@
         }),
 
         components: {
-            login
+            login,
+            register
         },
 
         mounted() {
