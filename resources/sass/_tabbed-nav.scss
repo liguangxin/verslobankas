@@ -6,4 +6,63 @@
             @apply text-blue-3;
         }
     }
+
+    li:not(.active) {
+        display: none;
+
+        @screen lg {
+            display: block;
+        }
+    }
+
+    a {
+        padding-top: 17px;
+        padding-bottom: 16px;
+
+        @screen lg {
+            @apply py-21px;
+            width: auto;
+            margin: 0;
+        }
+    }
+
+    &-login {
+        a {
+            @screen lg {
+                padding-top: 20px;
+                padding-bottom: 16px;
+            }
+        }
+    }
+
+    .active {
+        width: 88%;
+        text-align: center;
+        margin: 0 auto;
+
+        @screen lg {
+            width: auto;
+            margin: 0;
+        }
+    }
+}
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @screen lg {
+        display: none;
+    }
+
+    &-left {
+        left: 0;
+        margin-left: 1rem;
+    }
+
+    &-right {
+        right: 0;
+        margin-right: 1rem;
+    }
 }

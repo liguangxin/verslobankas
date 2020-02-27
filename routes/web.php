@@ -37,6 +37,10 @@ Route::get('perziureti-skelbimai', function() {
     return view('perziureti-skelbimai');
 });
 
+Route::get('prisijungti', function() {
+    return view('prisijungti');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
