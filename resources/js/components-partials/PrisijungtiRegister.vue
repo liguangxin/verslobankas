@@ -39,7 +39,7 @@
 
 <script>
     export default {
-        name: 'prisijungti-login',
+        name: 'prisijungti-register',
 
         data: () => ({
 
