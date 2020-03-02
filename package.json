@@ -22,10 +22,10 @@
         "popper.js": "^1.16",
         "postcss-nesting": "^7.0.1",
         "resolve-url-loader": "^3.1.1",
-        "sass": "^1.26.1",
+        "sass": "^1.26.2",
         "sass-loader": "8.*",
         "vue": "^2.6.11",
-        "vue-svg-inline-loader": "^1.4.5",
+        "vue-svg-inline-loader": "^1.4.6",
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
