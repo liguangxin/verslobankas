@@ -41,6 +41,10 @@ Route::get('prisijungti', function() {
     return view('prisijungti');
 });
 
+Route::get('nustatymai', function() {
+    return view('nustatymai');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

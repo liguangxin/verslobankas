@@ -108,6 +108,7 @@ module.exports = {
         }),
         'maxWidth': {
             '90px': '90px',
+            '250px': '250px',
             '251px': '251px',
             '279px': '279px',
             '287px': '287px',
@@ -116,6 +117,7 @@ module.exports = {
             '365px': '365px',
             '435px': '435px',
             '483px': '483px',
+            '600px': '600px',
             '687px': '687px',
             '1035px': '1035px',
         },
@@ -151,6 +153,9 @@ module.exports = {
             'purple': {
                 1: '#afacc9',
                 2: '#baacc9',
+            },
+            'red': {
+                1: '#f34a38',
             },
         },
         'fontSize': {
