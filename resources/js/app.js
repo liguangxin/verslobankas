@@ -117,3 +117,20 @@ if (ad_more_photos) {
 }
 
 // end Ad inner
+
+// Mobile menu
+
+const hamburger = document.getElementById('hamburger');
+const user_menu_mobile = document.getElementById('user_menu_mobile');
+
+hamburger.addEventListener('click', function(e) {
+    if (e.currentTarget.className.includes('is-active')) {
+        e.currentTarget.classList.remove('is-active');
+        user_menu_mobile.classList.add('hidden');
+    } else {
+        e.currentTarget.classList.add('is-active');
+        user_menu_mobile.classList.remove('hidden');
+    }
+});
+
+// end Mobile menu
