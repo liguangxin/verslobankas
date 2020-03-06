@@ -28,10 +28,6 @@ mix.sass('resources/sass/app.scss', 'public/css')
     .tailwind('./tailwind.config.js').sourceMaps();
 
 mix.options({
-    hmrOptions: {
-        host: 'verslobankas.test',
-        port: 8080
-    }
 });
 
 if (mix.inProduction()) {
