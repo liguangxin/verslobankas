@@ -39,12 +39,16 @@ Route::get('perziureti-skelbimai', function() {
 
 Route::get('prisijungti', function() {
     return view('prisijungti');
-});
+})->name('login');
 
 Route::get('nustatymai', function() {
     return view('nustatymai');
 });
 
-Auth::routes();
+Route::get('prideti-skelbima', function() {
+    return view('prideti-skelbima');
+});
+
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
