@@ -110,6 +110,7 @@ module.exports = {
         }),
         'maxWidth': {
             '90px': '90px',
+            '180px': '180px',
             '250px': '250px',
             '251px': '251px',
             '279px': '279px',
