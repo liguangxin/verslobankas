@@ -18,9 +18,12 @@
         "appstract/laravel-blade-directives": "^1.7",
         "fideloper/proxy": "^4.0",
         "fruitcake/laravel-cors": "^1.0",
+        "gregoriohc/laravel-nova-theme-responsive": "^0.8.0",
         "laravel/framework": "^7.0",
         "laravel/nova": "*",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "ofcold/nova-sortable": "^1.0",
+        "spatie/laravel-medialibrary": "^7.0.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
