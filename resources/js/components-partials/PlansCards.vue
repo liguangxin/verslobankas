@@ -38,7 +38,7 @@
                         <div class="sep"></div>
                     </div>
                     <div>
-                        <div class="flex items-center mb-23px">
+                        <div class="flex items-center mb-23px whitespace-no-wrap">
                             <span class="mr-1">
                                 <img svg-inline class="icon" src="../../../public/images/info.svg" alt="info" />
                             </span>
@@ -49,7 +49,7 @@
                             </div>
                             <span class="text-14px">30 d.</span>
                         </div>
-                        <div class="flex items-center mb-23px">
+                        <div class="flex items-center mb-23px whitespace-no-wrap">
                             <span class="mr-1">
                                 <img svg-inline class="icon" src="../../../public/images/info.svg" alt="info" />
                             </span>
@@ -80,7 +80,7 @@
                         <div class="sep"></div>
                     </div>
                     <div>
-                        <div class="flex items-center mb-23px">
+                        <div class="flex items-center mb-23px whitespace-no-wrap">
                             <span class="mr-1">
                                 <img svg-inline class="icon" src="../../../public/images/info.svg" alt="info" />
                             </span>
@@ -91,7 +91,7 @@
                             </div>
                             <span class="text-14px">90 d.</span>
                         </div>
-                        <div class="flex items-center mb-23px">
+                        <div class="flex items-center mb-23px whitespace-no-wrap">
                             <span class="mr-1">
                                 <img svg-inline class="icon" src="../../../public/images/info.svg" alt="info" />
                             </span>
@@ -124,7 +124,7 @@
                 slidesPerView: 3,
                 spaceBetween: 6,
                 breakpoints: {
-                    460: {
+                    600: {
                         slidesPerView: 'auto',
                         centeredSlides: true,
                     }
