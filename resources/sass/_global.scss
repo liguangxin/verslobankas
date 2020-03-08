@@ -90,3 +90,16 @@ button {
         margin-bottom: 18px;
     }
 }
+
+.sep {
+    @apply my-24px border-b border-blue-9;
+}
+
+.full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}

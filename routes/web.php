@@ -48,6 +48,9 @@ Route::get('nustatymai', function() {
 Route::get('prideti-skelbima', function() {
     return view('prideti-skelbima');
 });
+Route::get('prideti-skelbima/aktyvuoti', function() {
+    return view('prideti-skelbima-aktyvuoti');
+});
 
 // Auth::routes();
 
