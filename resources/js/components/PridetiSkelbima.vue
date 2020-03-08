@@ -1,14 +1,40 @@
 <template>
     <div class="container max-w-512px py-8 lg:py-50px text-14px">
         <div>
+            <div class="text-18px font-light mb-4 tracking-0.34px">Redaguojamas skelbimas (ID: 123124124)</div>
+            <span class="text-13px font-light text-white bg-green-1 rounded-8px py-2 px-2">Aktyvus iki 2020-08-09</span>
+            <div class="flex flex-col sm:flex-row sm:items-center bg-blue-2 rounded-4px text-12px font-light pl-4 sm:pl-0 my-24px">
+                <div class="flex-1 flex items-center h-48px sm:h-56px">
+                    <a href="#" class="flex-1 flex items-center h-full sm:pl-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g><g><g><path fill="#9fa9c5" d="M11.558 4.267V.795L10.343 2.01A5.898 5.898 0 0 0 .1 6.003a5.898 5.898 0 0 0 5.903 5.903c1.667 0 3.16-.695 4.236-1.805l-.972-1.008a4.455 4.455 0 0 1-3.264 1.424 4.505 4.505 0 0 1-4.514-4.514c0-2.5 2.014-4.514 4.514-4.514 1.32 0 2.534.59 3.368 1.493L8.086 4.267z"/></g></g></g></svg>
+                        <span class="ml-12px">Atnaujinti</span>
+                    </a>
+                    <a href="#" class="flex-2 sm:flex-1 flex items-center sm:justify-start pl-8 pr-4 h-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10"><g><g><g><path fill="#9fa9c5" d="M11.156 4.268A8.157 8.157 0 0 0 9.404 2.84L7.616 4.628c.036.132.048.276.048.408 0 1.056-.852 1.92-1.908 1.92a1.69 1.69 0 0 1-.42-.048L4.16 8.084c.492.12 1.02.192 1.596.192 2.676 0 4.5-1.5 5.4-2.46a1.157 1.157 0 0 0 0-1.548z"/></g><g><path fill="#9fa9c5" d="M3.848 5.047c0-1.06.852-1.914 1.908-1.914.168 0 .336.024.504.072L3.908 5.552a2.24 2.24 0 0 1-.06-.505zM10.1.22a.608.608 0 0 0-.864 0l-1.8 1.8a6.775 6.775 0 0 0-1.68-.204c-2.676 0-4.5 1.5-5.4 2.46a1.132 1.132 0 0 0 0 1.548c.408.444 1.02.996 1.812 1.464L.932 8.524a.608.608 0 0 0 0 .864.61.61 0 0 0 .864 0L10.1 1.084a.608.608 0 0 0 0-.864z"/></g></g></g></svg>
+                        <span class="ml-12px">Paslėpti</span>
+                    </a>
+                </div>
+                <div class="flex-1 flex items-center h-48px sm:h-56px">
+                    <a href="#" class="flex-1 flex items-center h-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><g><g><path fill="#9fa9c5" d="M3.554 3.196a.401.401 0 0 0-.237.684l2.116 2.125-2.116 2.12a.4.4 0 1 0 .566.564L6 6.569l2.117 2.12a.398.398 0 0 0 .583.02.403.403 0 0 0-.017-.584l-2.116-2.12L8.683 3.88a.401.401 0 0 0-.329-.684.4.4 0 0 0-.237.12L6 5.438l-2.117-2.12a.4.4 0 0 0-.329-.121zM6 .8c2.877 0 5.2 2.323 5.2 5.2 0 2.877-2.323 5.2-5.2 5.2A5.194 5.194 0 0 1 .8 6C.8 3.123 3.123.8 6 .8zM6 0C2.691 0 0 2.691 0 6s2.691 6 6 6 6-2.691 6-6-2.691-6-6-6z"/></g></g></svg>
+                        <span class="ml-12px">Pašalinti </span>
+                    </a>
+                    <a href="#" class="flex-2 sm:flex-1 sm:flex-none flex items-center sm:justify-start h-full pl-8 pr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11"><g><g><g><path fill="#9fa9c5" d="M11.04 7.68H4.152l-1.272.96v-.96H.96V.96h10.08zm0-7.68H.96A.963.963 0 0 0 0 .96v6.72c0 .528.432.96.96.96h.96v1.92l2.568-1.92h6.552c.528 0 .96-.432.96-.96V.96a.963.963 0 0 0-.96-.96z"/></g><g><path fill="#9fa9c5" d="M4.674 3.001a.187.187 0 0 0-.111.32l.987.989-.987.987a.187.187 0 1 0 .264.262l.988-.987.987.987a.186.186 0 0 0 .327-.128.186.186 0 0 0-.063-.134L6.08 4.31l.987-.99a.187.187 0 1 0-.264-.262l-.987.987-.988-.987A.187.187 0 0 0 4.674 3z"/><path fill="none" stroke="#9fa9c5" stroke-miterlimit="20" d="M4.674 3.001a.187.187 0 0 0-.111.32l.987.989v0l-.987.987a.187.187 0 1 0 .264.262l.988-.987v0l.987.987a.186.186 0 0 0 .327-.128.186.186 0 0 0-.063-.134L6.08 4.31v0l.987-.99a.187.187 0 1 0-.264-.262l-.987.987v0l-.988-.987A.187.187 0 0 0 4.674 3z"/></g></g></g></svg>
+                        <span class="ml-12px">Išjungti komentarus</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div>
             <label class="block">
                 <span class="block mb-3">Verslo skelbimo antraštė</span>
                 <input class="form-input block w-full" v-model="title">
             </label>
         </div>
-        <div class="flex flex-col my-24px lg:my-8">
+        <div class="flex flex-col my-24px sm:my-8">
             <div class="mb-3">Veiksmai</div>
-            <div class="flex lg:items-center">
+            <div class="flex sm:items-center">
                 <label class="inline-flex items-center">
                     <input type="radio" v-model="ad_type" value="sell" class="form-radio text-blue-3">
                     <span class="ml-4 font-light tracking-0.5px">Siūlau</span>
@@ -20,7 +46,7 @@
             </div>
         </div>
         <div class="my-24px">
-            <label class="block lg:max-w-250px relative">
+            <label class="block sm:max-w-250px relative">
                 <span class="block mb-3">Kategorija</span>
                 <select name="ad_type" v-model="category" class="form-select block w-full text-12px py-14px border-blue-4">
                     <option value="">Pasirinkite</option>
@@ -41,7 +67,7 @@
             </label>
         </div>
         <div class="my-24px">
-            <label class="block lg:max-w-250px relative">
+            <label class="block sm:max-w-250px relative">
                 <span class="block mb-3">Siūlomo verslo modelis</span>
                 <select name="ad_type" v-model="business_model" class="form-select block w-full text-12px py-14px border-blue-4">
                     <option value="">Pasirinkite</option>
@@ -49,7 +75,7 @@
             </label>
         </div>
         <div class="my-24px">
-            <label class="block lg:max-w-250px">
+            <label class="block sm:max-w-250px">
                 <span class="block mb-3">Verslo kaina</span>
                 <span class="relative flex items-center">
                     <input class="form-input block w-full" v-model="price">
@@ -61,7 +87,7 @@
         </div>
         <div class="my-24px border-b border-blue-9"></div>
         <div class="flex flex-wrap -mx-6px">
-            <div class="w-full lg:w-250px px-6px my-12px">
+            <div class="w-full sm:w-250px px-6px my-12px">
                 <label class="block relative">
                     <span class="block mb-3">Mėnesio apyvarta</span>
                     <select name="ad_type" v-model="turnover" class="form-select block w-full text-12px py-14px border-blue-4">
@@ -69,7 +95,7 @@
                     </select>
                 </label>
             </div>
-            <div class="w-full lg:w-250px px-6px my-12px">
+            <div class="w-full sm:w-250px px-6px my-12px">
                 <label class="block relative">
                     <span class="block mb-3">Mėnesio pelnas</span>
                     <select name="ad_type" v-model="profit" class="form-select block w-full text-12px py-14px border-blue-4">
@@ -77,7 +103,7 @@
                     </select>
                 </label>
             </div>
-            <div class="w-full lg:w-250px px-6px my-12px">
+            <div class="w-full sm:w-250px px-6px my-12px">
                 <label class="block relative">
                     <span class="block mb-3">Darbuotojų skaičius</span>
                     <select name="ad_type" v-model="employees_count" class="form-select block w-full text-12px py-14px border-blue-4">
@@ -87,7 +113,7 @@
             </div>
         </div>
         <div class="flex flex-wrap -mx-6px">
-            <div class="w-full lg:w-250px px-6px my-12px">
+            <div class="w-full sm:w-250px px-6px my-12px">
                 <label class="block relative">
                     <span class="block mb-3">Mėnesio svetainės lankytojų vidurkis</span>
                     <select name="ad_type" v-model="web_traffic" class="form-select block w-full text-12px py-14px border-blue-4">
@@ -96,9 +122,9 @@
                 </label>
             </div>
         </div>
-        <div class="my-16px lg:my-24px border-b border-blue-9"></div>
+        <div class="my-16px sm:my-24px border-b border-blue-9"></div>
         <div class="flex flex-wrap -mx-6px">
-            <div class="w-full lg:w-250px px-6px my-12px">
+            <div class="w-full sm:w-250px px-6px my-12px">
                 <label class="block relative">
                     <span class="block mb-3">Jūs esate</span>
                     <select name="ad_type" v-model="seller_type" class="form-select block w-full text-12px py-14px border-blue-4">
@@ -109,32 +135,32 @@
         </div>
         <div class="text-18px font-medium my-24px">Matoma svetainės lankytojams</div>
         <div>
-            <label class="block lg:max-w-250px">
+            <label class="block sm:max-w-250px">
                 <span class="block mb-3">Vardas</span>
                 <input class="form-input block w-full" v-model="seller_name">
             </label>
         </div>
-        <div class="my-24px flex flex-col lg:flex-row lg:items-end">
-            <label class="block w-full lg:max-w-250px">
+        <div class="my-24px flex flex-col sm:flex-row sm:items-end">
+            <label class="block w-full sm:max-w-250px">
                 <span class="block mb-3">El. paštas</span>
                 <input class="form-input block w-full" v-model="seller_email">
             </label>
-            <label class="flex items-center lg:px-4 text-12px font-light mb-1 mt-3 lg:mt-0">
+            <label class="flex items-center sm:px-4 text-12px font-light mb-1 mt-3 sm:mt-0">
                 <input type="checkbox" v-model="seller_email_off" class="form-checkbox mr-3 h-6 w-6">
                 <span class="block max-w-180px">Išjungti tiesioginį rašymą į el.paštą</span>
             </label>
         </div>
-        <div class="my-24px flex flex-col lg:flex-row lg:items-end">
-            <label class="block w-full lg:max-w-250px">
+        <div class="my-24px flex flex-col sm:flex-row sm:items-end">
+            <label class="block w-full sm:max-w-250px">
                 <span class="block mb-3">Telefono numeris</span>
                 <input type="text" class="form-input block w-full" v-model="seller_phone">
             </label>
-            <label class="flex items-center lg:px-4 text-12px font-light mb-1 mt-3 lg:mt-0">
+            <label class="flex items-center sm:px-4 text-12px font-light mb-1 mt-3 sm:mt-0">
                 <input type="checkbox" v-model="seller_phone_off" class="form-checkbox mr-3 h-6 w-6">
                 <span class="block max-w-180px">Nerodyti telefono numerio skelbime</span>
             </label>
         </div>
-        <div class="my-24px w-full lg:max-w-250px">
+        <div class="my-24px w-full sm:max-w-250px">
             <label class="block relative">
                 <span class="block mb-3">Miestas</span>
                 <select name="ad_type" v-model="seller_city" class="form-select block w-full text-12px py-14px border-blue-4">
@@ -142,38 +168,38 @@
                 </select>
             </label>
         </div>
-        <div class="text-18px font-medium mt-24px mb-3 lg:mb-24px  leading-tight">Nematoma svetainės lankytojams</div>
+        <div class="text-18px font-medium mt-24px mb-3 sm:mb-24px  leading-tight">Nematoma svetainės lankytojams</div>
         <div class="flex flex-wrap -mx-6px">
-            <div class="w-full lg:w-250px px-6px my-12px">
+            <div class="w-full sm:w-250px px-6px my-12px">
                 <label class="block relative">
                     <span class="block mb-3">Įmonės pavadinimas</span>
                     <input type="text" class="form-input block w-full" v-model="seller_company_name">
                 </label>
             </div>
-            <div class="w-full lg:w-250px px-6px my-12px">
+            <div class="w-full sm:w-250px px-6px my-12px">
                 <label class="block relative">
                     <span class="block mb-3">Įmonės kodas</span>
                     <input type="number" class="form-input block w-full" v-model="seller_company_code">
                 </label>
             </div>
         </div>
-        <div class="my-12px w-full lg:w-250px">
+        <div class="my-12px w-full sm:w-250px">
             <label class="block relative">
                 <span class="block mb-3">PVM kodas (nebūtina)</span>
                 <input type="text" class="form-input block w-full" v-model="seller_company_vat">
             </label>
         </div>
-        <div class="my-24px w-full lg:w-250px">
+        <div class="my-24px w-full sm:w-250px">
             <label class="block relative">
                 <span class="block mb-3">Adresas</span>
                 <input type="text" class="form-input block w-full" v-model="seller_company_address">
             </label>
         </div>
-        <div class="my-20px lg:my-40px text-blue-1">
+        <div class="my-20px sm:my-40px text-blue-1">
             Įvesdami skelbimą, sutinkate su portalo <a href="#" class="text-blue-3 underline">taisyklėmis</a> (atnaujinta 2019-08-31)
         </div>
         <div class="flex items-center justify-end">
-            <button class="flex items-center justify-center mb-4 lg:mb-0 w-full min-w-222px lg:w-auto bg-blue-3 text-white text-12px uppercase font-medium tracking-0.5px bg-blue-2 rounded-4px p-4">
+            <button class="flex items-center justify-center mb-4 sm:mb-0 w-full min-w-222px sm:w-auto bg-blue-3 text-white text-12px uppercase font-medium tracking-0.5px bg-blue-2 rounded-4px p-4">
                 SKELBTI
             </button>
         </div>
