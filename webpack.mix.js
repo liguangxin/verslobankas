@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-require('mix-tailwindcss');
+// require('mix-tailwindcss');
 
 mix.override(config => {
     config.module.rules.push({
@@ -22,12 +22,17 @@ mix.override(config => {
  |
  */
 
-mix.js('resources/js/app.js', 'public/js').sourceMaps();
+mix.js('resources/js/app.js', 'public/js');
 
-mix.sass('resources/sass/app.scss', 'public/css')
-    .tailwind('./tailwind.config.js').sourceMaps();
+mix.postCss('resources/css/app.css', 'public/css', [
+    require('tailwindcss'),
+    require('postcss-nested'),
+    require('postcss-custom-properties'),
+    require('autoprefixer'),
+]);
 
 mix.options({
+    processCssUrls: false,
 });
 
 if (mix.inProduction()) {

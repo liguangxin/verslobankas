@@ -1,0 +1,12 @@
+@import 'tailwindcss.css';
+@import "_variables.css";
+@import "../../node_modules/hamburgers/dist/hamburgers.css";
+@import "_global.css";
+@import "_buttons.css";
+@import "_custom-switchers.css";
+@import "_header.css";
+@import "_categories.css";
+@import "_ads-list.css";
+@import "_modals.css";
+@import "_subheader.css";
+@import "_tabbed-nav.css";
