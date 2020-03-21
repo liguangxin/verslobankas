@@ -21,16 +21,24 @@
                 </div>
                 <div class="flex text-12px ml-8 mr-25px">
                     <a href="{{ route('mano-paieskos') }}" class="mr-4">Paieškos (3)</a>
-                    <a href="/mano-skelbimai">Mano skelbimai (2)</a>
+                    @auth
+                        <a href="/mano-skelbimai">Mano skelbimai (2)</a>
+                    @endauth
                 </div>
                 <div class="relative">
-                    <a href="javascript:" class="block">
-                        <img src="{{ asset('images/user-icon-1.svg') }}" class="overlay_trigger" data-modal="profile_menu" alt="">
-                    </a>
-                    <div id="profile_menu" class="profile-menu modal-content">
-                        @include('partials.profile-avatar-name')
-                        @include('partials.profile-menu')
-                    </div>
+                    @auth
+                        <a href="javascript:" class="block">
+                            <img src="{{ asset('images/user-icon-1.svg') }}" class="overlay_trigger" data-modal="profile_menu" alt="">
+                        </a>
+                        <div id="profile_menu" class="profile-menu modal-content">
+                            @include('partials.profile-avatar-name')
+                            @include('partials.profile-menu')
+                        </div>
+                    @endauth
+
+                    @guest
+                        <a href="{{ route('login') }}" class="text-black-1 text-12px">Prisijungti</a> <span class="text-black-1 text-12px mx-1">|</span> <a href="{{ route('login', ['tab' => 'register']) }}" class="text-black-1 text-12px">Registruotis</a>
+                    @endguest
                 </div>
             </div>
             <div class="lg:hidden flex">

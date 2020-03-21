@@ -21,3 +21,45 @@
         margin-right: 24px;
     }
 }
+
+.hamburger {
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.is-active {
+        .hamburger-inner {
+            transform: translate3d(0, -7px, 0) rotate(-45deg);
+
+            &:before {
+                top: 0 !important;
+            }
+        }
+    }
+
+    &-box {
+        width: 25px;
+        height: 18px;
+    }
+
+    &-inner {
+        width: 25px;
+        height: 2px;
+
+        &:before,
+        &:after {
+            width: 25px;
+            height: 2px;
+        }
+
+        &:before {
+            top: -7px !important;
+        }
+
+        &:after {
+            top: -14px !important;
+        }
+    }
+}

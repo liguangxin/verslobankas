@@ -121,12 +121,13 @@
 
         data: () => ({
             swiperOption: {
-                slidesPerView: 3,
+                slidesPerView: 'auto',
+                centeredSlides: true,
                 spaceBetween: 6,
                 breakpoints: {
                     600: {
-                        slidesPerView: 'auto',
-                        centeredSlides: true,
+                        slidesPerView: 3,
+                        centeredSlides: false,
                     }
                 },
             },
@@ -134,7 +135,7 @@
 
         computed: {
             swiper() {
-                return this.$refs.slider.swiper;
+                return this.$refs.slider.$swiper;
             }
         },
 
