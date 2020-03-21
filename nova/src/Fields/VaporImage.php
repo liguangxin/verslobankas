@@ -4,7 +4,7 @@ namespace Laravel\Nova\Fields;
 
 use Illuminate\Support\Facades\Storage;
 
-class Image extends File
+class VaporImage extends VaporFile
 {
     use PresentsImages;
 
@@ -19,21 +19,20 @@ class Image extends File
      * Create a new field.
      *
      * @param  string  $name
-     * @param  string|null  $attribute
-     * @param  string|null  $disk
+     * @param  string  $attribute
      * @param  callable|null  $storageCallback
      * @return void
      */
-    public function __construct($name, $attribute = null, $disk = 'public', $storageCallback = null)
+    public function __construct($name, $attribute = null, $storageCallback = null)
     {
-        parent::__construct($name, $attribute, $disk, $storageCallback);
+        parent::__construct($name, $attribute);
 
         $this->acceptedTypes('image/*');
 
         $this->thumbnail(function () {
-            return $this->value ? Storage::disk($this->getStorageDisk())->url($this->value) : null;
+            return $this->value ? Storage::disk($this->getStorageDisk())->temporaryUrl($this->value, now()->addMinutes(5)) : null;
         })->preview(function () {
-            return $this->value ? Storage::disk($this->getStorageDisk())->url($this->value) : null;
+            return $this->value ? Storage::disk($this->getStorageDisk())->temporaryUrl($this->value, now()->addMinutes(5)) : null;
         });
     }
 

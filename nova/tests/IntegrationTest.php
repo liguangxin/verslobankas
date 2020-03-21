@@ -26,6 +26,7 @@ use Laravel\Nova\Tests\Fixtures\SoftDeletingFileResource;
 use Laravel\Nova\Tests\Fixtures\TagResource;
 use Laravel\Nova\Tests\Fixtures\UserResource;
 use Laravel\Nova\Tests\Fixtures\UserWithRedirectResource;
+use Laravel\Nova\Tests\Fixtures\VaporFileResource;
 use Mockery;
 use Orchestra\Testbench\TestCase;
 
@@ -76,6 +77,7 @@ abstract class IntegrationTest extends TestCase
             TagResource::class,
             UserResource::class,
             UserWithRedirectResource::class,
+            VaporFileResource::class,
         ]);
 
         Nova::auth(function () {

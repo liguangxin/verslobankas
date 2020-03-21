@@ -3,61 +3,36 @@
 namespace Laravel\Nova\Fields;
 
 use Closure;
+use Exception;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Nova\Contracts\Deletable as DeletableContract;
 use Laravel\Nova\Contracts\Storable as StorableContract;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class File extends Field implements StorableContract, DeletableContract, Downloadable
+class VaporFile extends Field implements StorableContract, DeletableContract, Downloadable
 {
-    use Storable;
-    use Deletable;
-    use AcceptsTypes;
-    use HasDownload;
-    use HasThumbnail;
-    use HasPreview;
+    use AcceptsTypes, Deletable, HasDownload, HasPreview, HasThumbnail, Storable;
 
     /**
      * The field's component.
      *
      * @var string
      */
-    public $component = 'file-field';
+    public $component = 'vapor-file-field';
 
     /**
-     * The callback that should be executed to store the file.
-     *
-     * @var callable
-     */
-    public $storageCallback;
-
-    /**
-     * The callback used to retrieve the thumbnail URL.
-     *
-     * @var callable
-     */
-    public $thumbnailUrlCallback;
-
-    /**
-     * The callback used to retrieve the preview URL.
-     *
-     * @var callable
-     */
-    public $previewUrlCallback;
-
-    /**
-     * The callback used to generate the download HTTP response.
-     *
-     * @var callable
-     */
-    public $downloadResponseCallback;
-
-    /**
-     * Determin if the file is able to be downloaded.
+     * Indicates if the element should be shown on the index view.
      *
      * @var bool
      */
-    public $downloadsAreEnabled = true;
+    public $showOnIndex = false;
+
+    /**
+     * The text alignment for the field's text in tables.
+     *
+     * @var string
+     */
+    public $textAlign = 'center';
 
     /**
      * The callback that should be used to determine the file's storage name.
@@ -74,40 +49,16 @@ class File extends Field implements StorableContract, DeletableContract, Downloa
     public $originalNameColumn;
 
     /**
-     * The column where the file's size should be stored.
-     *
-     * @var string
-     */
-    public $sizeColumn;
-
-    /**
-     * The text alignment for the field's text in tables.
-     *
-     * @var string
-     */
-    public $textAlign = 'center';
-
-    /**
-     * Indicates if the element should be shown on the index view.
-     *
-     * @var bool
-     */
-    public $showOnIndex = false;
-
-    /**
      * Create a new field.
      *
      * @param  string  $name
      * @param  string  $attribute
-     * @param  string|null  $disk
      * @param  callable|null  $storageCallback
      * @return void
      */
-    public function __construct($name, $attribute = null, $disk = 'public', $storageCallback = null)
+    public function __construct($name, $attribute = null, $storageCallback = null)
     {
         parent::__construct($name, $attribute);
-
-        $this->disk($disk);
 
         $this->prepareStorageCallback($storageCallback);
 
@@ -116,9 +67,7 @@ class File extends Field implements StorableContract, DeletableContract, Downloa
         })->preview(function () {
             //
         })->download(function ($request, $model) {
-            $name = $this->originalNameColumn ? $model->{$this->originalNameColumn} : null;
-
-            return Storage::disk($this->getStorageDisk())->download($this->value, $name);
+            return Storage::disk($this->getStorageDisk())->download($this->value);
         })->delete(function () {
             if ($this->value) {
                 Storage::disk($this->getStorageDisk())->delete($this->value);
@@ -126,6 +75,38 @@ class File extends Field implements StorableContract, DeletableContract, Downloa
                 return $this->columnsThatShouldBeDeleted();
             }
         });
+    }
+
+    /**
+     * Set the name of the disk the file is stored on by default.
+     *
+     * @param  string  $disk
+     * @return $this
+     * @throws \Exception
+     */
+    public function disk($disk)
+    {
+        throw new Exception('You cannot set the disk used for Vapor file fields.');
+    }
+
+    /**
+     * Get the disk that the field is stored on.
+     *
+     * @return string|null
+     */
+    public function getStorageDisk()
+    {
+        return 's3';
+    }
+
+    /**
+     * Get the full path that the field is stored at on disk.
+     *
+     * @return string|null
+     */
+    public function getStoragePath()
+    {
+        return $this->value;
     }
 
     /**
@@ -152,13 +133,15 @@ class File extends Field implements StorableContract, DeletableContract, Downloa
      */
     protected function storeFile($request, $requestAttribute)
     {
-        if (! $this->storeAsCallback) {
-            return $request->file($requestAttribute)->store($this->getStorageDir(), $this->getStorageDisk());
-        }
+        return with($request->input('vaporFile')['key'], function ($key) use ($requestAttribute, $request) {
+            $fileName = $this->storeAsCallback
+                ? call_user_func($this->storeAsCallback, $request)
+                : str_replace('tmp/', '', $key);
 
-        return $request->file($requestAttribute)->storeAs(
-            $this->getStorageDir(), call_user_func($this->storeAsCallback, $request), $this->getStorageDisk()
-        );
+            Storage::disk($this->getStorageDisk())->copy($key, $fileName);
+
+            return $fileName;
+        });
     }
 
     /**
@@ -170,14 +153,8 @@ class File extends Field implements StorableContract, DeletableContract, Downloa
      */
     protected function mergeExtraStorageColumns($request, array $attributes)
     {
-        $file = $request->file($this->attribute);
-
         if ($this->originalNameColumn) {
-            $attributes[$this->originalNameColumn] = $file->getClientOriginalName();
-        }
-
-        if ($this->sizeColumn) {
-            $attributes[$this->sizeColumn] = $file->getSize();
+            $attributes[$this->originalNameColumn] = $request->input($this->attribute);
         }
 
         return $attributes;
@@ -196,63 +173,7 @@ class File extends Field implements StorableContract, DeletableContract, Downloa
             $attributes[$this->originalNameColumn] = null;
         }
 
-        if ($this->sizeColumn) {
-            $attributes[$this->sizeColumn] = null;
-        }
-
         return $attributes;
-    }
-
-    /**
-     * Specify the callback that should be used to store the file.
-     *
-     * @param  callable  $storageCallback
-     * @return $this
-     */
-    public function store(callable $storageCallback)
-    {
-        $this->storageCallback = $storageCallback;
-
-        return $this;
-    }
-
-    /**
-     * Specify the callback that should be used to determine the file's storage name.
-     *
-     * @param  callable  $storeAsCallback
-     * @return $this
-     */
-    public function storeAs(callable $storeAsCallback)
-    {
-        $this->storeAsCallback = $storeAsCallback;
-
-        return $this;
-    }
-
-    /**
-     * Specify the callback that should be used to retrieve the thumbnail URL.
-     *
-     * @param  callable  $thumbnailUrlCallback
-     * @return $this
-     */
-    public function thumbnail(callable $thumbnailUrlCallback)
-    {
-        $this->thumbnailUrlCallback = $thumbnailUrlCallback;
-
-        return $this;
-    }
-
-    /**
-     * Specify the callback that should be used to retrieve the preview URL.
-     *
-     * @param  callable  $previewUrlCallback
-     * @return $this
-     */
-    public function preview(callable $previewUrlCallback)
-    {
-        $this->previewUrlCallback = $previewUrlCallback;
-
-        return $this;
     }
 
     /**
@@ -269,33 +190,6 @@ class File extends Field implements StorableContract, DeletableContract, Downloa
     }
 
     /**
-     * Specify the column where the file size should be stored.
-     *
-     * @param  string  $column
-     * @return $this
-     */
-    public function storeSize($column)
-    {
-        $this->sizeColumn = $column;
-
-        return $this;
-    }
-
-    /**
-     * Hydrate the given attribute on the model based on the incoming request.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @param  object  $model
-     * @return void
-     */
-    public function fillForAction(NovaRequest $request, $model)
-    {
-        if (isset($request[$this->attribute])) {
-            $model->{$this->attribute} = $request[$this->attribute];
-        }
-    }
-
-    /**
      * Hydrate the given attribute on the model based on the incoming request.
      *
      * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
@@ -306,10 +200,6 @@ class File extends Field implements StorableContract, DeletableContract, Downloa
      */
     protected function fillAttribute(NovaRequest $request, $requestAttribute, $model, $attribute)
     {
-        if (is_null($file = $request->file($requestAttribute)) || ! $file->isValid()) {
-            return;
-        }
-
         $result = call_user_func(
             $this->storageCallback,
             $request,
@@ -347,16 +237,6 @@ class File extends Field implements StorableContract, DeletableContract, Downloa
                 );
             };
         }
-    }
-
-    /**
-     * Get the full path that the field is stored at on disk.
-     *
-     * @return string|null
-     */
-    public function getStoragePath()
-    {
-        return $this->value;
     }
 
     /**

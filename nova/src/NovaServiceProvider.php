@@ -169,6 +169,7 @@ class NovaServiceProvider extends ServiceProvider
                 'locale' => config('app.locale', 'en'),
                 'algoliaAppId' => config('services.algolia.appId'),
                 'algoliaApiKey' => config('services.algolia.apiKey'),
+                'version' => Nova::version(),
             ]);
         });
     }

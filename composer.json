@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": "^7.4",
         "appstract/laravel-blade-directives": "^1.7",
         "fideloper/proxy": "^4.0",
         "fruitcake/laravel-cors": "^1.0",
