@@ -5,7 +5,7 @@
         </div>
         <div>
             <ul>
-                <li v-for="error in errors" class="flex items-center mb-2">
+                <li v-for="error in errors" class="flex items-center mb-2 last:mb-0">
                     <div class="ml-21px text-14px font-light tracking-0.58px text-red-3">{{ error }}</div>
                 </li>
             </ul>

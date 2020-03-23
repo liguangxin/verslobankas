@@ -185,7 +185,9 @@ module.exports = {
             '26px': '26px',
         },
     },
-    variants: {},
+    variants: {
+        'margin': ['last'],
+    },
     corePlugins: {
         container: false,
     },

@@ -44,6 +44,8 @@ Route::get('prisijungti', function() {
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('login-facebook', 'Auth\LoginController@redirectToProviderFb')->name('login-facebook');
+Route::get('facebook-callback', 'Auth\LoginController@handleProviderCallbackFb');
 
 Route::get('nustatymai', function() {
     return view('nustatymai');
@@ -55,9 +57,6 @@ Route::get('prideti-skelbima', function() {
 Route::get('prideti-skelbima/aktyvuoti', function() {
     return view('prideti-skelbima-aktyvuoti');
 });
-
-Route::get('login-facebook', 'LoginController@redirectToProvider')->name('login-facebook');
-Route::get('oauth-callback', 'LoginController@handleProviderCallback');
 
 Route::get('privatumo-politika', function() {
     return view('duk');
