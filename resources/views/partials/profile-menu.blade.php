@@ -43,7 +43,7 @@
     @endauth
     @auth
         <li class="mb-3">
-            <a href="javascript:" class="flex items-center text-12px font-light">
+            <a href="{{ route('logout') }}" class="flex items-center text-12px font-light">
                 <img src="{{ asset('images/profile-logout.svg') }}" class="mr-3" alt="">
                 Atsijungti
             </a>

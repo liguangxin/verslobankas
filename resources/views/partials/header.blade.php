@@ -37,7 +37,7 @@
                     @endauth
 
                     @guest
-                        <a href="{{ route('login') }}" class="text-black-1 text-12px">Prisijungti</a> <span class="text-black-1 text-12px mx-1">|</span> <a href="{{ route('login', ['tab' => 'register']) }}" class="text-black-1 text-12px">Registruotis</a>
+                        <a href="{{ route('prisijungti') }}" class="text-black-1 text-12px">Prisijungti</a> <span class="text-black-1 text-12px mx-1">|</span> <a href="{{ route('prisijungti', ['tab' => 'register']) }}" class="text-black-1 text-12px">Registruotis</a>
                     @endguest
                 </div>
             </div>

@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-// require('mix-tailwindcss');
 
 mix.override(config => {
     config.module.rules.push({
@@ -33,6 +32,10 @@ mix.postCss('resources/css/app.css', 'public/css', [
 
 mix.options({
     processCssUrls: false,
+    hmrOptions: {
+        host: 'verslobankas.test',
+        port: 8080
+    }
 });
 
 if (mix.inProduction()) {

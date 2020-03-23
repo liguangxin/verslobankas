@@ -23,10 +23,20 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
+    <script>
+        window.app = {
+            'csrf': '{{ csrf_token() }}',
+            'routes': {
+                'register': '{{ route('register') }}',
+                'login': '{{ route('login') }}',
+            },
+        };
+    </script>
 </head>
 <body>
     <div id="overlay" class="overlay"></div>
-    <div class="flex flex-col justify-between lg:h-full" id="app">
+    <div class="flex flex-col justify-between lg:h-full" id="app" data-errors="{{ json_encode($errors->all()) }}">
         <div>
             @include('partials.header')
             @if(Route::currentRouteName() == 'home')

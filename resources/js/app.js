@@ -4,9 +4,21 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import ValidationErrors from "./components/ValidationErrors";
+
 require('./bootstrap');
 
 window.Vue = require('vue');
+
+Vue.mixin({
+    data: function() {
+        return {
+            get app() {
+                return window.app;
+            }
+        }
+    }
+});
 
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
@@ -26,7 +38,7 @@ Vue.component('slide-up-down', SlideUpDown);
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-const files = require.context('./', true, /\.vue$/i);
+const files = require.context('./autoload-components', true, /\.vue$/i);
 files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
@@ -36,6 +48,8 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+Vue.component('validation-errors', ValidationErrors);
 
 const app = new Vue({
     el: '#app',

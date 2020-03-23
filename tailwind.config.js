@@ -168,6 +168,8 @@ module.exports = {
             },
             'red': {
                 1: '#f34a38',
+                2: '#ffebeb',
+                3: '#ff3131',
             },
         },
         'fontSize': {

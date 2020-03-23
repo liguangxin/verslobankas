@@ -52,10 +52,20 @@
             bus.$on('switch-tab', (payload) => {
                 this.changeTab(payload);
             });
+
+            if (new URLSearchParams(document.location.search).get("tab") === 'register') {
+                this.changeTab(3);
+            }
         },
 
         methods: {
             changeTab(tab) {
+
+                // isvalom query params
+                if (tab !== 3) {
+                    window.history.replaceState({}, '', `${location.pathname}`);
+                }
+
                 this.active_tab = tab;
             },
             prevTab() {

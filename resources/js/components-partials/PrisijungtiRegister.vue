@@ -12,22 +12,27 @@
             <div class="w-80px bg-blue-7 relative text-center text-14px">arba</div>
         </div>
 
-        <label class="block relative">
-            <img svg-inline class="icon absolute left-0 top-0 mt-15px ml-15px" src="../../../public/images/register_name.svg" alt="Vardas" />
-            <input type="email" class="form-input text-14px pl-50px py-13px block w-full mb-12px" placeholder="Vardas">
-        </label>
-        <label class="block relative">
-            <img svg-inline class="icon absolute left-0 top-0 mt-15px ml-15px" src="../../../public/images/form_login.svg" alt="El. paštas arba tel. nr" />
-            <input type="email" class="form-input text-14px pl-50px py-13px block w-full mb-12px" placeholder="El. paštas arba tel. nr">
-        </label>
-        <label class="block relative">
-            <img svg-inline class="icon absolute left-0 top-0 mt-15px ml-15px" src="../../../public/images/form_pass.svg" alt="Slaptažodis" />
-            <input type="password" class="form-input text-14px pl-50px py-13px block w-full mb-12px" placeholder="Slaptažodis">
-        </label>
+        <validation-errors></validation-errors>
 
-        <button class="border border-blue-3 px-27px py-15px rounded-4px uppercase w-full text-blue-3 text-12px font-medium block mx-auto my-24px">
-            Registruotis
-        </button>
+        <form :action="app.routes.register" method="post">
+            <input type="hidden" name="_token" :value="app.csrf">
+            <label class="block relative">
+                <img svg-inline class="icon absolute left-0 top-0 mt-15px ml-15px" src="../../../public/images/register_name.svg" alt="Vardas" />
+                <input type="text" name="name" class="form-input text-14px pl-50px py-13px block w-full mb-12px" placeholder="Vardas">
+            </label>
+            <label class="block relative">
+                <img svg-inline class="icon absolute left-0 top-0 mt-15px ml-15px" src="../../../public/images/form_login.svg" alt="El. paštas arba tel. nr" />
+                <input type="email" name="email" class="form-input text-14px pl-50px py-13px block w-full mb-12px" placeholder="El. paštas arba tel. nr">
+            </label>
+            <label class="block relative">
+                <img svg-inline class="icon absolute left-0 top-0 mt-15px ml-15px" src="../../../public/images/form_pass.svg" alt="Slaptažodis" />
+                <input type="password" name="password" class="form-input text-14px pl-50px py-13px block w-full mb-12px" placeholder="Slaptažodis">
+            </label>
+
+            <button type="submit" class="border border-blue-3 px-27px py-15px rounded-4px uppercase w-full text-blue-3 text-12px font-medium block mx-auto my-24px">
+                Registruotis
+            </button>
+        </form>
 
         <div class="text-center text-12px font-light max-w-365px mx-auto">
             Registuodamieso sutinkate su Verslobankas.lt portalo <a href="javascript:" class="text-blue-3 underline">taisyklėmis</a> ir
