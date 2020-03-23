@@ -20,9 +20,6 @@ Route::get('/mano-paieskos', 'MySearchesController@index')->name('mano-paieskos'
 Route::get('/pardavejo-skelbimai', function(){
     return view('pardavejo-skelbimai');
 });
-Route::get('/mano-skelbimai', function(){
-    return view('mano-skelbimai');
-});
 Route::get('/duk', function(){
     return view('duk');
 });
@@ -47,10 +44,6 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('login-facebook', 'Auth\LoginController@redirectToProviderFb')->name('login-facebook');
 Route::get('facebook-callback', 'Auth\LoginController@handleProviderCallbackFb');
 
-Route::get('nustatymai', function() {
-    return view('nustatymai');
-});
-
 Route::get('prideti-skelbima', function() {
     return view('prideti-skelbima');
 });
@@ -62,6 +55,13 @@ Route::get('privatumo-politika', function() {
     return view('duk');
 });
 
-// Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['auth:customer,api']], function () {
+    Route::get('nustatymai', function() {
+        return view('nustatymai');
+    })->name('profile-settings');
+    Route::get('/mano-skelbimai', function(){
+        return view('mano-skelbimai');
+    });
+});

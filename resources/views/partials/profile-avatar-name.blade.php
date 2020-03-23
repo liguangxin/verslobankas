@@ -2,8 +2,8 @@
     @auth
         <img src="{{ asset('images/user-icon-1.svg') }}" class="mr-4" alt="">
         <div class="text-12px font-light">
-            <div>Jack Doe</div>
-            <div class="text-blue-1">Vilnius</div>
+            <div>{{ auth()->user()->name }}</div>
+            <div class="text-blue-1">{{ auth()->user()->city }}</div>
         </div>
     @endauth
 

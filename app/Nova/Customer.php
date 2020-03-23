@@ -48,6 +48,9 @@ class Customer extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
+            Text::make('City')
+                ->sortable(),
+
             Text::make('Email')
                 ->sortable()
                 ->rules('required', 'email', 'max:254')

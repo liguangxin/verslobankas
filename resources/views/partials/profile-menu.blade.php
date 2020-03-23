@@ -35,7 +35,7 @@
     @endauth
     @auth
         <li class="mb-3">
-            <a href="javascript:" class="flex items-center text-12px font-light">
+            <a href="{{ route('profile-settings') }}" class="flex items-center text-12px font-light">
                 <img src="{{ asset('images/profile-settings.svg') }}" class="mr-3" alt="">
                 Paskyros nustatymai
             </a>
