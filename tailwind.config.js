@@ -187,7 +187,7 @@ module.exports = {
         },
     },
     variants: {
-        'margin': ['last'],
+        'margin': ['last','responsive'],
     },
     corePlugins: {
         container: false,

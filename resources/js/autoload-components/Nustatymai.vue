@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="container py-8 lg:py-56px">
-            <manoduomenys></manoduomenys>
+            <manoduomenys :user="user"></manoduomenys>
         </div>
     </div>
 </template>
@@ -27,6 +27,8 @@
 
     export default {
         name: 'nustatymai',
+
+        props: ['user'],
 
         data: () => ({
             active_tab: 1,

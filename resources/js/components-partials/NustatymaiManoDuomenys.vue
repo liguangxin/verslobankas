@@ -115,6 +115,8 @@
     export default {
         name: 'mano-duomenys',
 
+        props: ['user'],
+
         data: () => ({
             formData: {
                 user_type: 'company',
@@ -130,5 +132,10 @@
                 billing_email: null,
             },
         }),
+
+        mounted() {
+            this.formData.user_name = this.user.name;
+            this.formData.email = this.user.email;
+        },
     }
 </script>

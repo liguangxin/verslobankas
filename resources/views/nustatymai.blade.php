@@ -3,5 +3,5 @@
 @section('title') Nustatymai @stop
 
 @section('content')
-    <nustatymai></nustatymai>
+    <nustatymai :user="{{ auth()->user() }}"></nustatymai>
 @stop
