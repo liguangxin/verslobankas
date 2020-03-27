@@ -26,7 +26,7 @@
             </label>
 
             <div class="text-right py-6px mb-4">
-                <a href="javascript:" class="text-blue-3 underline text-14px">Pamiršote slaptažodį?</a>
+                <a href="/password/reset" class="text-blue-3 underline text-14px">Pamiršote slaptažodį?</a>
             </div>
 
             <button type="submit" class="border border-blue-3 px-27px py-15px rounded-4px uppercase w-full text-blue-3 text-12px font-medium block mx-auto">

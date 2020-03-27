@@ -11,6 +11,8 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -41,6 +43,7 @@ Route::get('prisijungti', function() {
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password-reset');
 Route::get('login-facebook', 'Auth\LoginController@redirectToProviderFb')->name('login-facebook');
 Route::get('facebook-callback', 'Auth\LoginController@handleProviderCallbackFb');
 

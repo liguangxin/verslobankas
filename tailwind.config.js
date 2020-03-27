@@ -157,6 +157,7 @@ module.exports = {
             'green': {
                 1: '#5aac44',
                 2: '#f1f5f8',
+                3: '#f7fff5',
             },
             'yellow': {
                 1: '#ff9131',
