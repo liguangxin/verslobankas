@@ -62,7 +62,7 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('facebook')->user();
 
-        $customer_exist = Customer::where('user_provider_id', $user->getId())->first();
+        $customer_exist = Customer::where('email', $user->getEmail())->first();
 
         if ($customer_exist) {
             Auth::login($customer_exist);
