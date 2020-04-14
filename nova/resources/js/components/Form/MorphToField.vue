@@ -122,7 +122,7 @@
         </portal>
 
         <!-- Trashed State -->
-        <div v-if="softDeletes && !isLocked && !isReadonly">
+        <div v-if="shouldShowTrashed">
           <checkbox-with-label
             :dusk="field.attribute + '-with-trashed-checkbox'"
             :checked="withTrashed"
@@ -162,6 +162,7 @@ export default {
     selectedResource: null,
     search: '',
     relationModalOpen: false,
+    withTrashed: false,
   }),
 
   /**
@@ -413,12 +414,21 @@ export default {
 
     canShowNewRelationModal() {
       return (
-        this.field.shouldShowCreateRelationButton &&
+        this.field.showCreateRelationButton &&
         this.resourceType &&
         !this.shownViaNewRelationModal &&
         !this.isLocked &&
         !this.isReadonly &&
         this.authorizedToCreate
+      )
+    },
+
+    shouldShowTrashed() {
+      return (
+        this.softDeletes &&
+        !this.isLocked &&
+        !this.isReadonly &&
+        this.field.displaysWithTrashed
       )
     },
   },

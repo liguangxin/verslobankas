@@ -79,4 +79,21 @@ class CreationControllerTest extends IntegrationTest
             ->assertJsonCount(3, 'panels')
             ->assertJsonCount(4, 'fields');
     }
+
+    public function test_creation_fields_for_custom_model_attributes_do_not_crash()
+    {
+        $this->withExceptionHandling()
+            ->getJson('/nova-api/wheels/creation-fields')
+            ->assertOk();
+    }
+}
+
+class Author extends User
+{
+    protected $table = 'users';
+
+    public function getPostAttribute()
+    {
+        return $this->belongsTo(Post::class);
+    }
 }

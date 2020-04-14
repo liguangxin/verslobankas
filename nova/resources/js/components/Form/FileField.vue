@@ -1,11 +1,17 @@
 <template>
-  <default-field :field="field" :errors="errors">
+  <default-field
+    :field="field"
+    :errors="errors"
+    :full-width-content="true"
+    :show-help-text="!isReadonly"
+  >
     <template slot="field">
-      <div v-if="hasValue" class="mb-6">
+      <div v-if="hasValue" :class="{ 'mb-6': !isReadonly }">
         <template v-if="shouldShowLoader">
           <ImageLoader
             :src="imageUrl"
             :maxWidth="maxWidth"
+            :rounded="field.rounded"
             @missing="value => (missing = value)"
           />
         </template>
@@ -25,7 +31,10 @@
           </card>
         </template>
 
-        <p v-if="imageUrl" class="mt-3 flex items-center text-sm">
+        <p
+          v-if="imageUrl && !isReadonly"
+          class="mt-3 flex items-center text-sm"
+        >
           <DeleteButton
             :dusk="field.attribute + '-delete-link'"
             v-if="shouldShowRemoveButton"
@@ -44,7 +53,15 @@
         </portal>
       </div>
 
-      <span class="form-file mr-4" :class="{ 'opacity-75': isReadonly }">
+      <p v-if="!hasValue && isReadonly" class="pt-2 text-sm text-90">
+        {{ __('This file field is read-only.') }}
+      </p>
+
+      <span
+        v-if="shouldShowField"
+        class="form-file mr-4"
+        :class="{ 'opacity-75': isReadonly }"
+      >
         <input
           ref="fileField"
           :dusk="field.attribute"
@@ -67,7 +84,9 @@
         </label>
       </span>
 
-      <span class="text-gray-50 select-none"> {{ currentLabel }} </span>
+      <span v-if="shouldShowField" class="text-90 text-sm select-none">
+        {{ currentLabel }}
+      </span>
 
       <p v-if="hasError" class="text-xs mt-2 text-danger">{{ firstError }}</p>
     </template>
@@ -255,10 +274,17 @@ export default {
     },
 
     /**
+     * Determine whether the file field input should be shown.
+     */
+    shouldShowField() {
+      return Boolean(this.field.deletable && !this.isReadonly)
+    },
+
+    /**
      * Determine whether the field should show the remove button.
      */
     shouldShowRemoveButton() {
-      return Boolean(this.field.deletable)
+      return Boolean(this.field.deletable && !this.isReadonly)
     },
 
     /**

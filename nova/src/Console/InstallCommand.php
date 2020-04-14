@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 
 class InstallCommand extends Command
 {
+    use ResolvesStubPath;
+
     /**
      * The name and signature of the console command.
      *
@@ -38,7 +40,7 @@ class InstallCommand extends Command
 
         $this->comment('Generating User Resource...');
         $this->callSilent('nova:resource', ['name' => 'User']);
-        copy(__DIR__.'/stubs/user-resource.stub', app_path('Nova/User.php'));
+        copy($this->resolveStubPath('/stubs/nova/user-resource.stub'), app_path('Nova/User.php'));
 
         $this->setAppNamespace();
 

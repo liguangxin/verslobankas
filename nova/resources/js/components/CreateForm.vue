@@ -259,7 +259,7 @@ export default {
     panelsWithFields() {
       return _.map(this.panels, panel => {
         return {
-          name: panel.name,
+          ...panel,
           fields: _.filter(this.fields, field => field.panel == panel.name),
         }
       })

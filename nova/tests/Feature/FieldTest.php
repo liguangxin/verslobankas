@@ -77,9 +77,28 @@ class FieldTest extends IntegrationTest
 
         $field->resolve((object) []);
         $this->assertEquals('Computed', $field->value);
+    }
+
+    public function test_computed_fields_resolve_for_display()
+    {
+        $field = Text::make('InvokableComputed', function ($resource) {
+            return 'Computed';
+        });
 
         $field->resolveForDisplay((object) []);
         $this->assertEquals('Computed', $field->value);
+    }
+
+    public function test_computed_fields_use_display_callback()
+    {
+        $field = Text::make('InvokableComputed', function ($resource) {
+            return 'Computed';
+        })->displayUsing(function ($value) {
+            return sprintf('Displayed Via %s Field', $value);
+        });
+
+        $field->resolveForDisplay((object) []);
+        $this->assertEquals('Displayed Via Computed Field', $field->value);
     }
 
     public function test_computed_fields_resolve_with_resource()
@@ -90,9 +109,16 @@ class FieldTest extends IntegrationTest
 
         $field->resolve((object) ['value' => 'Computed']);
         $this->assertEquals('Computed', $field->value);
+    }
+
+    public function test_computed_fields_resolve_for_display_with_resource()
+    {
+        $field = Text::make('InvokableComputed', function ($resource) {
+            return $resource->value;
+        });
 
         $field->resolveForDisplay((object) ['value' => 'Other value']);
-        $this->assertEquals('Computed', $field->value);
+        $this->assertEquals('Other value', $field->value);
     }
 
     public function test_can_see_when_proxies_to_gate()
@@ -467,6 +493,15 @@ class FieldTest extends IntegrationTest
 
         $field->showCreateRelationButton();
         $this->assertTrue($field->createRelationShouldBeShown($request));
+    }
+
+    public function test_fields_can_have_help_text()
+    {
+        $field = Text::make('Name')->help('Custom help text.');
+
+        $this->assertSubset([
+            'helpText' => 'Custom help text.',
+        ], $field->jsonSerialize());
     }
 }
 

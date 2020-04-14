@@ -580,7 +580,7 @@ class Action implements JsonSerializable
     /**
      * Set the text for the action's confirmation button.
      *
-     * @param $text
+     * @param  string  $text
      * @return $this
      */
     public function confirmButtonText($text)
@@ -593,7 +593,7 @@ class Action implements JsonSerializable
     /**
      * Set the text for the action's cancel button.
      *
-     * @param $text
+     * @param  string  $text
      * @return $this
      */
     public function cancelButtonText($text)
@@ -606,7 +606,7 @@ class Action implements JsonSerializable
     /**
      * Set the text for the action's confirmation message.
      *
-     * @param $text
+     * @param  string  $text
      * @return $this
      */
     public function confirmText($text)
@@ -645,6 +645,7 @@ class Action implements JsonSerializable
      * Prepare the instance for serialization.
      *
      * @return array
+     * @throws \ReflectionException
      */
     public function __sleep()
     {

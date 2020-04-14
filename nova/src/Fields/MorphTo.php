@@ -89,6 +89,13 @@ class MorphTo extends Field implements RelatableField
     public $inverse;
 
     /**
+     * Indicates whether the field should display the "With Trashed" option.
+     *
+     * @var bool
+     */
+    public $displaysWithTrashed = true;
+
+    /**
      * Create a new field.
      *
      * @param  string  $name
@@ -180,7 +187,7 @@ class MorphTo extends Field implements RelatableField
      */
     public function resolveForDisplay($resource, $attribute = null)
     {
-        //
+        $this->resolve($resource, $attribute);
     }
 
     /**
@@ -477,6 +484,18 @@ class MorphTo extends Field implements RelatableField
     }
 
     /**
+     * hides the "With Trashed" option.
+     *
+     * @return $this
+     */
+    public function withoutTrashed()
+    {
+        $this->displaysWithTrashed = false;
+
+        return $this;
+    }
+
+    /**
      * Prepare the field for JSON serialization.
      *
      * @return array
@@ -495,6 +514,7 @@ class MorphTo extends Field implements RelatableField
             'reverse' => $this->isReverseRelation(app(NovaRequest::class)),
             'searchable' => $this->searchable,
             'showCreateRelationButton' => $this->createRelationShouldBeShown(app(NovaRequest::class)),
+            'displaysWithTrashed' => $this->displaysWithTrashed,
         ], parent::jsonSerialize());
     }
 }

@@ -9,10 +9,11 @@ use Illuminate\Support\Traits\Macroable;
 use JsonSerializable;
 use Laravel\Nova\Contracts\Resolvable;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Metrics\HasHelpText;
 
 abstract class Field extends FieldElement implements JsonSerializable, Resolvable
 {
-    use Macroable;
+    use Macroable, HasHelpText;
 
     /**
      * The displayable name of the field.
@@ -177,17 +178,6 @@ abstract class Field extends FieldElement implements JsonSerializable, Resolvabl
     }
 
     /**
-     * Set the help text for the field.
-     *
-     * @param  string  $helpText
-     * @return $this
-     */
-    public function help($helpText)
-    {
-        return $this->withMeta(['helpText' => $helpText]);
-    }
-
-    /**
      * Stack the label above the field.
      *
      * @param bool $stack
@@ -215,13 +205,13 @@ abstract class Field extends FieldElement implements JsonSerializable, Resolvabl
         $attribute = $attribute ?? $this->attribute;
 
         if ($attribute === 'ComputedField') {
-            return;
+            $this->value = call_user_func($this->computedCallback, $resource);
         }
 
         if (! $this->displayCallback) {
             $this->resolve($resource, $attribute);
         } elseif (is_callable($this->displayCallback)) {
-            tap($this->resolveAttribute($resource, $attribute), function ($value) use ($resource, $attribute) {
+            tap($this->value ?? $this->resolveAttribute($resource, $attribute), function ($value) use ($resource, $attribute) {
                 $this->value = call_user_func($this->displayCallback, $value, $resource, $attribute);
             });
         }
@@ -694,6 +684,39 @@ abstract class Field extends FieldElement implements JsonSerializable, Resolvabl
     }
 
     /**
+     * Return the validation key for the field.
+     *
+     * @return string
+     */
+    public function validationKey()
+    {
+        return $this->attribute;
+    }
+
+    /**
+     * Set the width for the help text tooltip.
+     *
+     * @param  string
+     * @return $this
+     * @throws \Exception
+     */
+    public function helpWidth($helpWidth)
+    {
+        throw new \Exception('Help width is not supported on fields.');
+    }
+
+    /**
+     * Return the width of the help text tooltip.
+     *
+     * @return string
+     * @throws \Exception
+     */
+    public function getHelpWidth()
+    {
+        throw new \Exception('Help width is not supported on fields.');
+    }
+
+    /**
      * Prepare the field for JSON serialization.
      *
      * @return array
@@ -701,20 +724,22 @@ abstract class Field extends FieldElement implements JsonSerializable, Resolvabl
     public function jsonSerialize()
     {
         return array_merge([
+            'attribute' => $this->attribute,
             'component' => $this->component(),
-            'prefixComponent' => true,
+            'helpText' => $this->getHelpText(),
             'indexName' => $this->name,
             'name' => $this->name,
-            'attribute' => $this->attribute,
-            'value' => $this->value,
-            'panel' => $this->panel,
-            'sortable' => $this->sortable,
             'nullable' => $this->nullable,
+            'panel' => $this->panel,
+            'prefixComponent' => true,
             'readonly' => $this->isReadonly(app(NovaRequest::class)),
             'required' => $this->isRequired(app(NovaRequest::class)),
-            'textAlign' => $this->textAlign,
+            'sortable' => $this->sortable,
             'sortableUriKey' => $this->sortableUriKey(),
             'stacked' => $this->stacked,
+            'textAlign' => $this->textAlign,
+            'validationKey' => $this->validationKey(),
+            'value' => $this->value,
         ], $this->meta());
     }
 }
