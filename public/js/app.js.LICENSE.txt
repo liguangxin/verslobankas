@@ -4,6 +4,13 @@
  * Released under the MIT License.
  */
 
+/*!
+ * vue-awesome-swiper v4.1.0
+ * Copyright (c) Surmon. All rights reserved.
+ * Released under the MIT License.
+ * Surmon <https://github.com/surmon-china>
+ */
+
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -18,13 +25,6 @@ MERCHANTABLITY OR NON-INFRINGEMENT.
 See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
-
-/**
- * @file vue-awesome-swiper v4.0.4
- * @copyright Copyright (c) Surmon. All rights reserved.
- * @license Released under the MIT License.
- * @author Surmon <https://github.com/surmon-china>
- */
 
 /**
  * @license

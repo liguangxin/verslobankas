@@ -103,3 +103,7 @@ button {
     margin-left: -50vw;
     margin-right: -50vw;
 }
+
+.toasted-container.top-right {
+    top: 3%;
+}

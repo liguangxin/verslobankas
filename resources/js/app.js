@@ -27,6 +27,11 @@ Vue.use(VueAwesomeSwiper, /* { default global options } */);
 import VModal from 'vue-js-modal'
 Vue.use(VModal);
 
+import Toasted from 'vue-toasted';
+Vue.use(Toasted, {
+    'duration': '3000',
+});
+
 import SlideUpDown from 'vue-slide-up-down'
 Vue.component('slide-up-down', SlideUpDown);
 

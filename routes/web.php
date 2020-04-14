@@ -61,10 +61,15 @@ Route::get('privatumo-politika', function() {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth:customer,api']], function () {
+
     Route::get('nustatymai', function() {
         return view('nustatymai');
     })->name('profile-settings');
+
+    Route::post('nustatymai', 'CustomersController@update');
+
     Route::get('/mano-skelbimai', function(){
         return view('mano-skelbimai');
     });
+
 });

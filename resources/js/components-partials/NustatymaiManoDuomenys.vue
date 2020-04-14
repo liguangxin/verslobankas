@@ -1,93 +1,95 @@
 <template>
     <div class="flex flex-col-reverse lg:flex-row justify-between text-14px">
         <div class="w-full max-w-600px">
-            <div class="flex flex-col lg:flex-row lg:items-center mb-8 lg:mb-50px">
-                Esate
-                <div class="flex lg:items-center mt-4 lg:mt-0">
-                    <label class="inline-flex items-center lg:ml-36px">
-                        <input type="radio" class="form-radio text-blue-3" v-model="formData.user_type" value="private">
-                        <span class="ml-4 font-light tracking-0.5px">Privatus asmuo</span>
-                    </label>
-                    <label class="inline-flex items-center ml-8">
-                        <input type="radio" class="form-radio text-blue-3" v-model="formData.user_type" value="company">
-                        <span class="ml-4 font-light tracking-0.5px">Įmonė</span>
-                    </label>
+            <form action="" method="post" @submit.prevent="update">
+                <div class="flex flex-col lg:flex-row lg:items-center mb-8 lg:mb-50px">
+                    Esate
+                    <div class="flex lg:items-center mt-4 lg:mt-0">
+                        <label class="inline-flex items-center lg:ml-36px">
+                            <input type="radio" class="form-radio text-blue-3" v-model="formData.user_type" value="private">
+                            <span class="ml-4 font-light tracking-0.5px">Privatus asmuo</span>
+                        </label>
+                        <label class="inline-flex items-center ml-8">
+                            <input type="radio" class="form-radio text-blue-3" v-model="formData.user_type" value="company">
+                            <span class="ml-4 font-light tracking-0.5px">Įmonė</span>
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div class="flex flex-wrap -my-8px lg:-mx-50px">
-                <div class="w-full lg:w-1/2 py-8px lg:px-50px">
-                    <label class="block relative">
-                        <span class="block mb-3">Jūsų vardas</span>
-                        <input type="text" v-model="formData.user_name" class="form-input text-14px px-16px py-13px block w-full">
-                    </label>
+                <div class="flex flex-wrap -my-8px lg:-mx-50px">
+                    <div class="w-full lg:w-1/2 py-8px lg:px-50px">
+                        <label class="block relative">
+                            <span class="block mb-3">Jūsų vardas</span>
+                            <input type="text" v-model="formData.user_name" class="form-input text-14px px-16px py-13px block w-full">
+                        </label>
+                    </div>
+                    <div class="w-full lg:w-1/2 py-8px lg:px-50px">
+                        <label class="block relative">
+                            <span class="block mb-3">Įmonės pavadinimas</span>
+                            <input type="text" v-model="formData.compnay_name" class="form-input text-14px px-16px py-13px block w-full">
+                        </label>
+                    </div>
+                    <div class="w-full lg:w-1/2 py-8px lg:px-50px">
+                        <label class="block relative">
+                            <span class="block mb-3">Telefonas</span>
+                            <input type="text" v-model="formData.phone" class="form-input text-14px px-16px py-13px block w-full">
+                        </label>
+                    </div>
+                    <div class="w-full lg:w-1/2 py-8px lg:px-50px">
+                        <label class="block relative">
+                            <span class="block mb-3">Įmonės kodas</span>
+                            <input type="number" v-model="formData.company_code" class="form-input text-14px px-16px py-13px block w-full">
+                        </label>
+                    </div>
+                    <div class="w-full lg:w-1/2 py-8px lg:px-50px">
+                        <label class="block relative">
+                            <span class="block mb-3">El. paštas</span>
+                            <input type="email" v-model="formData.email" class="form-input text-14px px-16px py-13px block w-full">
+                        </label>
+                    </div>
+                    <div class="w-full lg:w-1/2 py-8px lg:px-50px">
+                        <label class="block relative">
+                            <span class="block mb-3">PVM mokėtojo kodas</span>
+                            <input type="text" v-model="formData.company_vat" class="form-input text-14px px-16px py-13px block w-full">
+                        </label>
+                    </div>
+                    <div class="w-full lg:w-1/2 py-8px lg:px-50px">
+                        <label class="block relative">
+                            <span class="block mb-3">Miestas</span>
+                            <select name="ad_type" v-model="formData.city" class="form-select block w-full text-12px py-14px border-blue-4">
+                                <option>Pasirinkite</option>
+                                <option value="Vilnius">Vilnius</option>
+                                <option>Kaunas</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="w-full lg:w-1/2 py-8px lg:px-50px">
+                        <label class="block relative">
+                            <span class="block mb-3">Įmonės adresas</span>
+                            <input type="text" v-model="formData.company_address" class="form-input text-14px px-16px py-13px block w-full">
+                        </label>
+                    </div>
+                    <div class="w-full lg:w-1/2 py-8px lg:px-50px">
+                        <label class="block relative">
+                            <span class="block mb-3">Interneto svetainė</span>
+                            <input type="text" v-model="formData.web_site" class="form-input text-14px px-16px py-13px block w-full">
+                        </label>
+                    </div>
+                    <div class="w-full lg:w-1/2 py-8px lg:px-50px">
+                        <label class="block relative">
+                            <span class="block mb-3">El. paštas sąskaitoms</span>
+                            <input type="email" v-model="formData.billing_email" class="form-input text-14px px-16px py-13px block w-full">
+                        </label>
+                    </div>
+                    <div class="w-full lg:w-1/2 py-8px lg:px-50px">
+                        <button type="button" class="border border-blue-3 px-27px py-15px rounded-4px uppercase w-full text-blue-3 text-12px font-medium block mt-25px mb-4">
+                            KEISTI SLAPTAŽODĮ
+                        </button>
+                        <button type="submit" class="w-full flex items-center justify-center bg-blue-3 text-white text-12px uppercase font-medium tracking-0.5px bg-blue-2 rounded-4px py-4 px-24px">
+                            IŠSAUGOTI
+                        </button>
+                    </div>
                 </div>
-                <div class="w-full lg:w-1/2 py-8px lg:px-50px">
-                    <label class="block relative">
-                        <span class="block mb-3">Įmonės pavadinimas</span>
-                        <input type="text" v-model="formData.compnay_name" class="form-input text-14px px-16px py-13px block w-full">
-                    </label>
-                </div>
-                <div class="w-full lg:w-1/2 py-8px lg:px-50px">
-                    <label class="block relative">
-                        <span class="block mb-3">Telefonas</span>
-                        <input type="text" v-model="formData.phone" class="form-input text-14px px-16px py-13px block w-full">
-                    </label>
-                </div>
-                <div class="w-full lg:w-1/2 py-8px lg:px-50px">
-                    <label class="block relative">
-                        <span class="block mb-3">Įmonės kodas</span>
-                        <input type="number" v-model="formData.company_code" class="form-input text-14px px-16px py-13px block w-full">
-                    </label>
-                </div>
-                <div class="w-full lg:w-1/2 py-8px lg:px-50px">
-                    <label class="block relative">
-                        <span class="block mb-3">El. paštas</span>
-                        <input type="email" v-model="formData.email" class="form-input text-14px px-16px py-13px block w-full">
-                    </label>
-                </div>
-                <div class="w-full lg:w-1/2 py-8px lg:px-50px">
-                    <label class="block relative">
-                        <span class="block mb-3">PVM mokėtojo kodas</span>
-                        <input type="text" v-model="formData.company_vat" class="form-input text-14px px-16px py-13px block w-full">
-                    </label>
-                </div>
-                <div class="w-full lg:w-1/2 py-8px lg:px-50px">
-                    <label class="block relative">
-                        <span class="block mb-3">Miestas</span>
-                        <select name="ad_type" v-model="formData.city" class="form-select block w-full text-12px py-14px border-blue-4">
-                            <option>Pasirinkite</option>
-                            <option>Vilnius</option>
-                            <option>Kaunas</option>
-                        </select>
-                    </label>
-                </div>
-                <div class="w-full lg:w-1/2 py-8px lg:px-50px">
-                    <label class="block relative">
-                        <span class="block mb-3">Įmonės adresas</span>
-                        <input type="text" v-model="formData.company_address" class="form-input text-14px px-16px py-13px block w-full">
-                    </label>
-                </div>
-                <div class="w-full lg:w-1/2 py-8px lg:px-50px">
-                    <label class="block relative">
-                        <span class="block mb-3">Interneto svetainė</span>
-                        <input type="text" v-model="formData.web_site" class="form-input text-14px px-16px py-13px block w-full">
-                    </label>
-                </div>
-                <div class="w-full lg:w-1/2 py-8px lg:px-50px">
-                    <label class="block relative">
-                        <span class="block mb-3">El. paštas sąskaitoms</span>
-                        <input type="email" v-model="formData.billing_email" class="form-input text-14px px-16px py-13px block w-full">
-                    </label>
-                </div>
-                <div class="w-full lg:w-1/2 py-8px lg:px-50px">
-                    <button class="border border-blue-3 px-27px py-15px rounded-4px uppercase w-full text-blue-3 text-12px font-medium block mt-25px mb-4">
-                        KEISTI SLAPTAŽODĮ
-                    </button>
-                    <button class="w-full flex items-center justify-center bg-blue-3 text-white text-12px uppercase font-medium tracking-0.5px bg-blue-2 rounded-4px py-4 px-24px">
-                        IŠSAUGOTI
-                    </button>
-                </div>
-            </div>
+            </form>
         </div>
         <div class="flex-1 lg:max-w-250px mb-40px lg:mb-0 lg:pt-105px">
             <div class="border-b border-blue-5 mb-8 pb-8">
@@ -134,8 +136,34 @@
         }),
 
         mounted() {
+            this.formData.user_type = this.user.user_type;
             this.formData.user_name = this.user.name;
             this.formData.email = this.user.email;
+            this.formData.billing_email = this.user.billing_email;
+            this.formData.city = this.user.city;
+            this.formData.phone = this.user.phone;
+            this.formData.compnay_name = this.user.compnay_name;
+            this.formData.company_code = this.user.company_code;
+            this.formData.company_vat = this.user.company_vat;
+            this.formData.company_address = this.user.company_address;
+            this.formData.web_site = this.user.web_site;
+        },
+
+        methods: {
+            update() {
+
+                axios.post(`/nustatymai`, this.formData).then(() => {
+                    this.$toasted.show('Nustatymai išsaugoti.', {
+                        'type': 'success',
+                        'icon': 'check',
+                    });
+                }).catch((error) => {
+                    this.$toasted.show(`Klaida: ${error.response.status}`, {
+                        'type': 'error',
+                        'icon': 'block',
+                    });
+                });
+            },
         },
     }
 </script>
