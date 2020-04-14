@@ -60,10 +60,17 @@ const app = new Vue({
     el: '#app',
 });
 
+const body = document.getElementsByTagName('body')[0];
+
 document.querySelectorAll('.overlay_trigger').forEach((el) => {
     el.addEventListener('click', (event) => {
         document.getElementsByTagName('body')[0].classList.toggle('no-scroll');
-        document.getElementById('overlay').classList.toggle('active');
+
+        if (el.dataset.overlay !== 'false') {
+            document.getElementById('overlay').classList.toggle('active');
+        } else {
+            document.getElementById('overlay_transparent').classList.toggle('active');
+        }
 
         if (event.currentTarget.getAttribute('data-modal')) {
             document.getElementById(event.currentTarget.getAttribute('data-modal')).classList.toggle('active');
@@ -84,8 +91,9 @@ document.querySelectorAll('.overlay_trigger_close').forEach((el) => {
 
 document.addEventListener('click', (el) => {
     if (el.target.getAttribute('class') && el.target.className.includes('overlay') && el.target.className.includes('active')) {
-        document.getElementsByTagName('body')[0].classList.remove('no-scroll');
+        body.classList.remove('no-scroll');
         document.getElementById('overlay').classList.remove('active');
+        document.getElementById('overlay_transparent').classList.remove('active');
         document.querySelectorAll('.modal-content.active').forEach((el) => {
             el.classList.remove('active');
         });
@@ -101,8 +109,9 @@ document.onkeydown = function(evt) {
         isEscape = (evt.keyCode === 27);
     }
     if (isEscape) {
-        document.getElementsByTagName('body')[0].classList.remove('no-scroll');
+        body.classList.remove('no-scroll');
         document.getElementById('overlay').classList.remove('active');
+        document.getElementById('overlay_transparent').classList.remove('active');
         document.querySelectorAll('.modal-content.active').forEach((el) => {
             el.classList.remove('active');
         });

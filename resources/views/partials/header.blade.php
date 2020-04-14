@@ -28,7 +28,7 @@
                 <div class="relative">
                     @auth
                         <a href="javascript:" class="block">
-                            <img src="{{ asset('images/user-icon-1.svg') }}" class="overlay_trigger" data-modal="profile_menu" alt="">
+                            <img src="{{ asset('images/user-icon-1.svg') }}" class="overlay_trigger" data-overlay="false" data-modal="profile_menu" alt="">
                         </a>
                         <div id="profile_menu" class="profile-menu modal-content">
                             @include('partials.profile-avatar-name')

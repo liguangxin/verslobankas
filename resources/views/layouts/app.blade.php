@@ -37,6 +37,7 @@
 </head>
 <body>
     <div id="overlay" class="overlay"></div>
+    <div id="overlay_transparent" class="overlay overlay-transparent"></div>
     <div class="flex flex-col justify-between lg:h-full" id="app" data-errors="{{ json_encode($errors->all()) }}">
         <div>
             @include('partials.header')
